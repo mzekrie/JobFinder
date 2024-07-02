@@ -92,10 +92,6 @@ class _AllJobsScreenState extends State<AllJobsScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-
                   /// list of jobs
                   SizedBox(
                     height: height * 0.02,

@@ -4,6 +4,7 @@ library;
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/control/cubit/fav_job/fav_jobs_cubit.dart';
 import 'package:gp_amit60_mary_zekrie/view/builder_item/fav_job_item.dart';
 import '../../model/shared/colors_theme.dart';
@@ -32,11 +33,12 @@ class _SavedJobsScreenState extends State<SavedJobsScreen> {
             title: const Text("Saved job "),
 
           ),
-          body:  SizedBox(
-      width: 300,
-      height: height,
+          body:  BlocBuilder<FavJobsCubit, FavJobsState>(
+  builder: (context, state) {
+    return Expanded(
       child: ListView.separated(
-                         separatorBuilder: (context, index) => const Divider(thickness: 1,color: AppTheme.gray,endIndent: 20, indent:
+        shrinkWrap: true,
+                         separatorBuilder: (context, index) =>  const Divider(thickness: 1,color: AppTheme.gray,endIndent: 20, indent:
                          20,),
                          itemCount: FavJobsCubit.get(context).favJobList!.length,
                          itemBuilder: (context, index) {
@@ -45,7 +47,9 @@ class _SavedJobsScreenState extends State<SavedJobsScreen> {
                            );
                          },
                        ),
-          ),
+    );
+  },
+),
 
 );
 }
