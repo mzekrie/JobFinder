@@ -32,7 +32,7 @@ Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.homeScreen, (route) => fa
               icon: Image.asset("assets/images/arrow-left.png",)),
           centerTitle: true,
           title: const Text("Message",),
-
+//
         ),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
