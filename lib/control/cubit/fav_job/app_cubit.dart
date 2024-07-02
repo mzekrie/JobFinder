@@ -30,7 +30,7 @@ class AppCubit extends Cubit<AppState> {
   // String? salary;
   // int? favorites;
   // int? expired;
-
+//
 
   void createDatabase () {
     openDatabase(
