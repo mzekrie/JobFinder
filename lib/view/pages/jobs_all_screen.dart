@@ -116,15 +116,6 @@ class _AllJobsScreenState extends State<AllJobsScreen> {
       },
     );
 
-
-    /// if we need to get the list but it has errors
-    // return BlocBuilder<AllJobsCubit, AllJobsState>(
-    //   builder: (context, state) {
-    //     return listJobItem(list:AllJobsCubit
-    //         .get(context)
-    //         .jobsList!);
-    //   },
-    // );
   }
 }
 
