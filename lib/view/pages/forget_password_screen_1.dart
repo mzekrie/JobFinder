@@ -11,8 +11,6 @@ import '../widget/default_text_field.dart';
 class ForgetPasswordScreen_1 extends StatelessWidget {
   const ForgetPasswordScreen_1({super.key});
 
-  //TextEditingController emailController = TextEditingController();
-  //TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +83,8 @@ class ForgetPasswordScreen_1 extends StatelessWidget {
                                 onTap: () {
                                   Navigator.of(context)
                                       .pushReplacementNamed("LoginScreen");
+
+                                  emailController.clear();
                                 },
                                 child: const Text(
                                   " Login",
@@ -106,11 +106,6 @@ class ForgetPasswordScreen_1 extends StatelessWidget {
                               backGround: AppTheme.blueButtonGP,
                               function: () async {
                                 if (formKey.currentState!.validate()) {
-                                  // await AuthCubit.get(context).loginByEmailAndPassword
-                                  //   (email: emailController.text,
-                                  //     password: passwordController.text);
-                                  // CacheHelper.putString(key: SharedKeys.email, value: emailController.text,);
-                                  // CacheHelper.putString(key: SharedKeys.password, value: passwordController.text,);
                                   Navigator.of(context).pushNamedAndRemoveUntil(
                                       AppRoute.forgetPasswordScreen_2, (route) => false);
                                 }

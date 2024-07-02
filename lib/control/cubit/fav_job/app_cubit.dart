@@ -2,41 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../../model/shared/constant_attribute.dart';
+
 part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
   AppCubit() : super(AppInitial());
   static AppCubit get(context) => BlocProvider.of(context); // ده الحيخلي الفروع للكيوبت تعرفك الحالة الحالية
-  int currentIndex  = 0 ; // starting point
-  bool isBottomSheet = false ;
-  IconData fabIcon = Icons.edit ;
   late Database database ;
-  List<Map> tasks = [] ;
-  List<Map> doneTasks = [] ;
-  List<Map> archiveTasks = [] ;
-  List<Widget> screens = [
-    // NewTasksScreen(), // 0
-    // DoneTasksScreen(), // 1
-    // ArchivedScreen(),  // 2
-  ];
-  List<String> titles = [
-    'New Tasks', // 0
-    'Done Tasks', // 1
-    'Archived Tasks', // 2
-  ];
+  // List<Map> allJobs = [] ;
+  // List<Map> favJobs = [] ;
 
-  void changeIndex(int index){
-    currentIndex = index ;
-    emit(AppChangeBottomNavBarState()); // أستدعاء الستيت
-  }
+  //
+  // int? id;
+  // String? name;
+  // String? image;
+  // String? jobTimeType;
+  // String? jobType;
+  // String? jobLevel;
+  // String? jobDescription;
+  // String? jobSkill;
+  // String? compName;
+  // String? compEmail;
+  // String? compWebsite;
+  // String? aboutComp;
+  // String? location;
+  // String? salary;
+  // int? favorites;
+  // int? expired;
+
 
   void createDatabase () {
     openDatabase(
-      "todo.db" , // path
+      "jobs.db" , // path
       version: 1 ,
       onCreate: (database , version){ // run one time only
         print('database Created');
-        database.execute("CREATE TABLE tasks(id INTEGER PRIMARY KEY , title TEXT , date TEXT , time TEXT , status TEXT)").then( // for creating table
+        database.execute("CREATE TABLE tasks(id INTEGER PRIMARY KEY , title TEXT , companyName TEXT , jobTimeType TEXT ,jobType TEXT ,  salary TEXT, location Text ,favorites TEXT)").then( // for creating table
                 (value){
               print('table created');
             }
@@ -57,13 +59,17 @@ class AppCubit extends Cubit<AppState> {
   } // close
 
   Future insertToDatabase({
-    required String title ,
-    required String time ,
-    required String date ,
+     required String title ,
+    required String companyName ,
+    required String jobTimeType ,
+    required String jobType ,
+    required String salary,
+    required String location ,
+    required String favorites
   }) async {
     await database.transaction( // edit
             (txn){
-          return txn.rawInsert("INSERT INTO tasks (title,date,time,status) VALUES('$title','$date','$time','new') ")// for adding data
+          return txn.rawInsert("INSERT INTO jobTable (title, companyName, jobTimeType,jobType,  salary, location,favorites) VALUES('Designer UX','Microsoft','Full Time','Freelance','1800 USD','Maadi Cairo' ,'1') ")// for adding data
               .then( (value){
             print("$value inserted Successfully");
             emit(AppInsertDatabaseState());
@@ -78,41 +84,26 @@ class AppCubit extends Cubit<AppState> {
   } // insert
 
   void getDataFromDatabase(database) {
-    tasks = [] ; // to clear any data
-    doneTasks = [] ;
-    archiveTasks = [] ;
     emit(AppCreateDatabaseLoadingState());
-    database.rawQuery('SELECT * FROM tasks').then((value) {
+    database.rawQuery('SELECT * FROM jobTable').then((value) {
       value.forEach( (element){ // تروح علي كل عنصر
-        if(element['status'] == 'new'){
-          tasks.add(element); // saving task screen
+        if(element['favorites'] == '1'){
+          favJobs.add(element); // saving fav screen
         }
-        else if (element['status'] == 'done'){
-          doneTasks.add(element); // saving done screen
-        }
-        else{
-          archiveTasks.add(element);
+        else if  (element['favorites'] == '0'){
+          allJobs.add(element); // saving all job screen
         }
       });
       emit(AppGetDatabaseState());
     }); // SQL => Get data from database
   }
 
-  void ChangeBottomSheetState({
-    required bool isShow ,
-    required IconData icon ,
-  }){
-    isBottomSheet = isShow ;
-    fabIcon =  icon ;
-    emit(AppChangeBottomSheetState());
-  }
-
   void UpdateData({
-    required status , // new or archive , done
+    required favorites , // new or archive , done
     required int id , // pk will never be duplicated
   }) async{
     database.rawUpdate(
-      'UPDATE tasks SET status = ? WHERE id = ? ', ['$status',id],
+      'UPDATE jobTable SET favorites = ? WHERE id = ? ', ['$favorites',id],
     ).then((value){
       getDataFromDatabase(database); // عشان يجبلك البيانات بعد التحديث
       emit(AppUpdateDatabaseState());
@@ -123,7 +114,7 @@ class AppCubit extends Cubit<AppState> {
     required int id ,
   }) async{
     database.rawDelete(
-        'DELETE FROM tasks WHERE id = ?', [id] // sql => ? بتحجز مكان
+        'DELETE FROM favorites WHERE id = ?', [id] // sql => ? بتحجز مكان
     ).then((value){
       getDataFromDatabase(database); // عشان يجبلك البيانات بعد التحديث
       emit(AppDeleteDatabaseState());

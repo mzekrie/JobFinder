@@ -14,6 +14,12 @@ class RegisterWorkTypeScreen extends StatefulWidget {
 class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
   Color boxColor = AppTheme.grayGP;
   Color boxColor_BG = AppTheme.whiteGP;
+  bool box1=false;
+  bool box2=false;
+  bool box3=false;
+  bool box4=false;
+  bool box5=false;
+  bool box6=false;
   bool isSelect1=false;
   @override
   Widget build(BuildContext context) {
@@ -61,19 +67,39 @@ class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
                       Row(
                           children: [
                             InkWell(
-
-                            onLongPress: (){
+                            onTap: (){
                               setState(() {
-                                boxColor = AppTheme.blueButtonGP;
-                                boxColor_BG = AppTheme.blueLightGP;
+                                box1 = !box1;
                               });
                               print('x');
                             },
-                            child: Ink(
+                            child: Visibility(
+                              visible:box1,
+                              child: Container(
+                                  width: width*0.42,
+                                  height: width*0.32,
+                                  decoration: BoxDecoration(
+                                    color: boxColor_BG,
+                                    border: Border.all(color: boxColor),
+                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset("assets/images/job_finder_1.png"),
+                                        SizedBox(height: height*0.01,),
+                                        Text("UI/UX Designer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                      ],
+                                    ),
+                                  )
+                              ),
+                              replacement: Container(
                                 width: width*0.42,
                                 height: width*0.32,
                                 decoration: BoxDecoration(
-                                  color: boxColor_BG,
+                                  color: AppTheme.blueLightGP,
                                   border: Border.all(color: boxColor),
                                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                                 ),
@@ -84,62 +110,85 @@ class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
                                     children: [
                                       Image.asset("assets/images/job_finder_1.png"),
                                       SizedBox(height: height*0.01,),
-                                      Text("UI/UX Designer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                      Text("UI/UX Designer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: AppTheme.blueButtonGP),),
                                     ],
                                   ),
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 0.02 * width,),
-                          InkWell(
-                            onLongPress: (){
-                              setState(() {
-                                boxColor = AppTheme.blueButtonGP;
-                                boxColor_BG = AppTheme.blueLightGP;
-                              });
-                              print('x');
-                            },
-                            child: Ink(
-                                width: width*0.42,
-                                height: width*0.32,
-                                decoration: BoxDecoration(
-                                  color: boxColor_BG,
-                                  border: Border.all(color: boxColor),
-                                  borderRadius: const BorderRadius.all(Radius.circular(10)),
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset("assets/images/job_finder_2.png"),
-                                      SizedBox(height: height*0.01,),
-                                      Text("Ilustrator Designer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
-                                    ],
-                                  ),
-                                )
                             ),
-                          ),
+                          ),),
+                          SizedBox(width: 0.02 * width,),
+                            InkWell(
+                              onTap: (){
+                                setState(() {
+                                  box2 = !box2;
+                                });
+                                print('x');
+                              },
+                              child: Visibility(
+                                visible:box2,
+                                child:  Container(
+                                  width: width*0.42,
+                                  height: width*0.32,
+                                  decoration: BoxDecoration(
+                                    color: AppTheme.blueLightGP,
+                                    border: Border.all(color: boxColor),
+                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset("assets/images/job_finder_2.png"),
+                                        SizedBox(height: height*0.01,),
+                                        Text("Illustrator Designer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: AppTheme.blueButtonGP),),
+                                      ],
+                                    ),
+                                  ),
+                                ),
 
+                                replacement: Container(
+                                    width: width*0.42,
+                                    height: width*0.32,
+                                    decoration: BoxDecoration(
+                                      color: boxColor_BG,
+                                      border: Border.all(color: boxColor),
+                                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Image.asset("assets/images/job_finder_2.png"),
+                                          SizedBox(height: height*0.01,),
+                                          Text("Illustrator Designer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                        ],
+                                      ),
+                                    )
+                                ),
+                              ),),
 
                         ],
                       ),
                       SizedBox(height: 0.02 * width,),
                       Row (
                         children:[
+
                           InkWell(
-                            onLongPress: (){
+                            onTap: (){
                               setState(() {
-                                boxColor = AppTheme.blueButtonGP;
-                                boxColor_BG = AppTheme.blueLightGP;
+                                box3 = !box3;
                               });
                               print('x');
                             },
-                            child: Ink(
+                            child: Visibility(
+                              visible:box3,
+                              child:  Container(
                                 width: width*0.42,
                                 height: width*0.32,
                                 decoration: BoxDecoration(
-                                  color: boxColor_BG,
+                                  color: AppTheme.blueLightGP,
                                   border: Border.all(color: boxColor),
                                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                                 ),
@@ -150,26 +199,48 @@ class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
                                     children: [
                                       Image.asset("assets/images/job_finder_3.png"),
                                       SizedBox(height: height*0.01,),
-                                      Text("Developer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                      Text("Developer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: AppTheme.blueButtonGP),),
                                     ],
                                   ),
-                                )
-                            ),
-                          ),
+                                ),
+                              ),
+
+                              replacement: Container(
+                                  width: width*0.42,
+                                  height: width*0.32,
+                                  decoration: BoxDecoration(
+                                    color: boxColor_BG,
+                                    border: Border.all(color: boxColor),
+                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset("assets/images/job_finder_3.png"),
+                                        SizedBox(height: height*0.01,),
+                                        Text("Developer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                      ],
+                                    ),
+                                  )
+                              ),
+                            ),),
                           SizedBox(width: 0.02 * width,),
                           InkWell(
-                            onLongPress: (){
+                            onTap: (){
                               setState(() {
-                                boxColor = AppTheme.blueButtonGP;
-                                boxColor_BG = AppTheme.blueLightGP;
+                                box4 = !box4;
                               });
                               print('x');
                             },
-                            child: Ink(
+                            child: Visibility(
+                              visible:box4,
+                              child:  Container(
                                 width: width*0.42,
                                 height: width*0.32,
                                 decoration: BoxDecoration(
-                                  color: boxColor_BG,
+                                  color: AppTheme.blueLightGP,
                                   border: Border.all(color: boxColor),
                                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                                 ),
@@ -180,30 +251,52 @@ class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
                                     children: [
                                       Image.asset("assets/images/job_finder_4.png"),
                                       SizedBox(height: height*0.01,),
-                                      Text("Management", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                      Text("Managment", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: AppTheme.blueButtonGP),),
                                     ],
                                   ),
-                                )
-                            ),
-                          ),
+                                ),
+                              ),
+
+                              replacement: Container(
+                                  width: width*0.42,
+                                  height: width*0.32,
+                                  decoration: BoxDecoration(
+                                    color: boxColor_BG,
+                                    border: Border.all(color: boxColor),
+                                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Image.asset("assets/images/job_finder_4.png"),
+                                        SizedBox(height: height*0.01,),
+                                        Text("Managment", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                      ],
+                                    ),
+                                  )
+                              ),
+                            ),),
                         ]
                       ),
                       SizedBox(height: 0.02 * width,),
                       Row (
                           children:[
                             InkWell(
-                              onLongPress: (){
+                              onTap: (){
                                 setState(() {
-                                  boxColor = AppTheme.blueButtonGP;
-                                  boxColor_BG = AppTheme.blueLightGP;
+                                  box5= !box5;
                                 });
                                 print('x');
                               },
-                              child: Ink(
+                              child: Visibility(
+                                visible:box5,
+                                child:  Container(
                                   width: width*0.42,
                                   height: width*0.32,
                                   decoration: BoxDecoration(
-                                    color: boxColor_BG,
+                                    color: AppTheme.blueLightGP,
                                     border: Border.all(color: boxColor),
                                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                                   ),
@@ -214,26 +307,48 @@ class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
                                       children: [
                                         Image.asset("assets/images/job_finder_5.png"),
                                         SizedBox(height: height*0.01,),
-                                        Text("Information Technology", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                        Text("Information Technology", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: AppTheme.blueButtonGP),),
                                       ],
                                     ),
-                                  )
-                              ),
-                            ),
+                                  ),
+                                ),
+
+                                replacement: Container(
+                                    width: width*0.42,
+                                    height: width*0.32,
+                                    decoration: BoxDecoration(
+                                      color: boxColor_BG,
+                                      border: Border.all(color: boxColor),
+                                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Image.asset("assets/images/job_finder_5.png"),
+                                          SizedBox(height: height*0.01,),
+                                          Text("Information Technology", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                        ],
+                                      ),
+                                    )
+                                ),
+                              ),),
                             SizedBox(width: 0.02 * width,),
                             InkWell(
-                              onLongPress: (){
+                              onTap: (){
                                 setState(() {
-                                  boxColor = AppTheme.blueButtonGP;
-                                  boxColor_BG = AppTheme.blueLightGP;
+                                  box6 = !box6;
                                 });
                                 print('x');
                               },
-                              child: Ink(
+                              child: Visibility(
+                                visible:box6,
+                                child:  Container(
                                   width: width*0.42,
                                   height: width*0.32,
                                   decoration: BoxDecoration(
-                                    color: boxColor_BG,
+                                    color: AppTheme.blueLightGP,
                                     border: Border.all(color: boxColor),
                                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                                   ),
@@ -244,12 +359,33 @@ class _RegisterWorkTypeScreenState extends State<RegisterWorkTypeScreen> {
                                       children: [
                                         Image.asset("assets/images/job_finder_6.png"),
                                         SizedBox(height: height*0.01,),
-                                        Text("Research and Analytics", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                        Text("Research& Analysis", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: AppTheme.blueButtonGP),),
                                       ],
                                     ),
-                                  )
-                              ),
-                            ),
+                                  ),
+                                ),
+
+                                replacement: Container(
+                                    width: width*0.42,
+                                    height: width*0.32,
+                                    decoration: BoxDecoration(
+                                      color: boxColor_BG,
+                                      border: Border.all(color: boxColor),
+                                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Image.asset("assets/images/job_finder_6.png"),
+                                          SizedBox(height: height*0.01,),
+                                          Text("Research& Analysis", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: boxColor),),
+                                        ],
+                                      ),
+                                    )
+                                ),
+                              ),),
                           ]
                       ),
                       Padding(

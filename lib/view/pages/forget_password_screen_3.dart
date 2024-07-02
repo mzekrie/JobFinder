@@ -12,9 +12,6 @@ import '../widget/default_text_field.dart';
 class ForgetPasswordScreen_3 extends StatelessWidget {
   const ForgetPasswordScreen_3({super.key});
 
-  //TextEditingController emailController = TextEditingController();
-  //TextEditingController passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -111,13 +108,9 @@ class ForgetPasswordScreen_3 extends StatelessWidget {
                                   );
                                   passwordController.clear();
                                   confirmedPasswordController.clear();
-                                  // await AuthCubit.get(context).loginByEmailAndPassword
-                                  //   (email: emailController.text,
-                                  //     password: passwordController.text);
-                                  // CacheHelper.putString(key: SharedKeys.email, value: emailController.text,);
-                                  // CacheHelper.putString(key: SharedKeys.password, value: passwordController.text,);
                                   Navigator.of(context).pushNamedAndRemoveUntil(
                                       AppRoute.forgetPasswordScreen_4, (route) => false);
+
                                 }
                               }),),
 

@@ -28,8 +28,7 @@ class _MessageScreenState extends State<MessageScreen> {
         appBar:  AppBar(
           leading:IconButton(
               onPressed: (){
-                Navigator.of(context).popAndPushNamed(AppRoute.homeScreen);
-                },
+Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.homeScreen, (route) => false);                },
               icon: Image.asset("assets/images/arrow-left.png",)),
           centerTitle: true,
           title: const Text("Message",),

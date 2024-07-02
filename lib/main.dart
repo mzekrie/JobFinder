@@ -67,13 +67,6 @@ class _MyAppState extends State<MyApp> {
         ),
         onGenerateRoute: onGenerateRouter,
         //initialRoute: AppRoute.registerScreen,
-        //initialRoute: AppRoute.splashScreen,
-       // initialRoute: AppRoute.homeScreen,
-        // initialRoute: AppRoute.registerWorkTypeScreen,
-        // initialRoute: AppRoute.forgetPasswordScreen_1,
-         // initialRoute: AppRoute.messageChatScreen,
-          //initialRoute: AppRoute.savedJobsScreen,
-           // initialRoute: AppRoute.termsConditionsScreen,
           initialRoute: AppRoute.splashScreen,
 
 
