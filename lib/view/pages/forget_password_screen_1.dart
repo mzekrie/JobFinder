@@ -48,7 +48,6 @@ class ForgetPasswordScreen_1 extends StatelessWidget {
                         ),
                         const SizedBox(
                             height: 30),
-
                         DefaultFormField(
                             radius: 10,
                             prefixIcon:
