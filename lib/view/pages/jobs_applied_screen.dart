@@ -8,9 +8,14 @@ import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 //import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AppliedJobsScreen extends StatelessWidget {
+class AppliedJobsScreen extends StatefulWidget {
   const AppliedJobsScreen({super.key});
 
+  @override
+  State<AppliedJobsScreen> createState() => _AppliedJobsScreenState();
+}
+
+class _AppliedJobsScreenState extends State<AppliedJobsScreen> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

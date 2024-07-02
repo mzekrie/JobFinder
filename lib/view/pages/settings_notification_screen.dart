@@ -1,11 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 import '../widget/default_text_field.dart';
-//import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SettingsNotificationScreen extends StatefulWidget {
   const SettingsNotificationScreen({super.key});
