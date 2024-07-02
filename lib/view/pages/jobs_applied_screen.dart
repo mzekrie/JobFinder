@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/control/cubit/applied_job/applied_job_cubit.dart';
 import 'package:gp_amit60_mary_zekrie/view/builder_item/job_applied_item.dart';
 
@@ -7,14 +8,8 @@ import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 //import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AppliedJobsScreen extends StatefulWidget {
+class AppliedJobsScreen extends StatelessWidget {
   const AppliedJobsScreen({super.key});
-
-  @override
-  State<AppliedJobsScreen> createState() => _AppliedJobsScreenState();
-}
-
-class _AppliedJobsScreenState extends State<AppliedJobsScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +29,7 @@ class _AppliedJobsScreenState extends State<AppliedJobsScreen> {
         title: const Text("Applied Job",
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
       ),
-      body:Expanded(
+      body: Expanded(
         child: ListView.separated(
           separatorBuilder: (context, index) => SizedBox(height: height* 0.02,),
           itemCount: AppliedJobCubit.get(context).appliedJobsList!.length,
@@ -44,10 +39,9 @@ class _AppliedJobsScreenState extends State<AppliedJobsScreen> {
           },
 
         ),
-      ),
-
-
+      )
     );
   }
+}
 
-} // end of state widget
+// end of state widget
