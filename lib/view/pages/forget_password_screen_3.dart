@@ -15,7 +15,7 @@ class ForgetPasswordScreen_3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    //double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child:Stack(
@@ -82,7 +82,7 @@ class ForgetPasswordScreen_3 extends StatelessWidget {
                               else if (value != passwordController.text ) {
                                 return "Both password must be identical";
                               }
-                              else return null;
+                              else {return null;}
                             }),
 
                         const DefaultText(
@@ -90,7 +90,7 @@ class ForgetPasswordScreen_3 extends StatelessWidget {
                           color: AppTheme.grayGP,
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
-                        ),
+                        ),//
                         const SizedBox(height: 40),
                         Padding(padding: const EdgeInsets.only( top:20, left: 20, right: 20),
                           child: defaultButton(
