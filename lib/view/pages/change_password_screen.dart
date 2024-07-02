@@ -122,7 +122,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       backGround: AppTheme.blueButtonGP,
                       function: () async {
                         if (formKeyPassword.currentState!.validate()) {
-
+//
                           //('error')
                           String? validate = await LoginCubit.get(context).updatePassword(
                             password: newPasswordController.text,

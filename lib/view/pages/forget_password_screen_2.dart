@@ -6,6 +6,7 @@ import '../widget/default_text_field.dart';
 class ForgetPasswordScreen_2 extends StatelessWidget {
   const ForgetPasswordScreen_2({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

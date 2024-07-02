@@ -92,7 +92,6 @@ class ForgetPasswordScreen_3 extends StatelessWidget {
                           fontWeight: FontWeight.normal,
                         ),
                         const SizedBox(height: 40),
-
                         Padding(padding: const EdgeInsets.only( top:20, left: 20, right: 20),
                           child: defaultButton(
                               text: 'Reset password',
