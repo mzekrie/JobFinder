@@ -58,6 +58,7 @@ class _MyAppState extends State<MyApp> {
         //   create: (context) => ThemesCubit(),
         // ),
       ],
+
         child: MaterialApp(
         title: 'Job Finder App',
         debugShowCheckedModeBanner: false,
