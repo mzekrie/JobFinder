@@ -18,7 +18,7 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
   AppliedJobModel appliedJobModel = AppliedJobModel();
 
   /// 3) create empty list of the same class model datatype to save the data on it
-  List<Data>? appliedJobsList;
+  late List<Data> appliedJobsList = [];
 
   /// 4) call get data fn from dio
   ///! get the data from API and put it on  all job list

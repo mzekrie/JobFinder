@@ -12,10 +12,8 @@ class FavJobsCubit extends Cubit<FavJobsState> {
   static FavJobsCubit get(context) => BlocProvider.of(context);
   /// 2) create object from model to call its data
   FavouritJobModel favJobModel = FavouritJobModel();
-
   /// 3) create empty list of the same class model datatype to save the data on it
-  List<Data>? favJobList;
-
+  late List<Data> favJobList =[];
 
   /// 4) call get data fn from dio
   ///! get the data from API and put it on  all job list

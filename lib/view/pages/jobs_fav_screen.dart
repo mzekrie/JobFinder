@@ -36,17 +36,21 @@ class _SavedJobsScreenState extends State<SavedJobsScreen> {
           body:  BlocBuilder<FavJobsCubit, FavJobsState>(
   builder: (context, state) {
     return Expanded(
-      child: ListView.separated(
-        shrinkWrap: true,
-                         separatorBuilder: (context, index) =>  const Divider(thickness: 1,color: AppTheme.gray,endIndent: 20, indent:
-                         20,),
-                         itemCount: FavJobsCubit.get(context).favJobList!.length,
-                         itemBuilder: (context, index) {
-                           return BuilderFavJobs(
-                             item: FavJobsCubit.get(context).favJobList![index],
-                           );
-                         },
-                       ),
+      child: SizedBox(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        child: ListView.separated(
+          shrinkWrap: true,
+                           separatorBuilder: (context, index) =>  const Divider(thickness: 1,color: AppTheme.gray,endIndent: 20, indent:
+                           20,),
+                           itemCount: FavJobsCubit.get(context).favJobList!.length,
+                           itemBuilder: (context, index) {
+                             return BuilderFavJobs(
+                               item: FavJobsCubit.get(context).favJobList![index],
+                             );
+                           },
+                         ),
+      ),
     );
   },
 ),

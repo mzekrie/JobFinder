@@ -21,7 +21,7 @@ class AllJobsCubit extends Cubit<AllJobsState> {
   AllJobsModel suggestedJobsModel = AllJobsModel();
 
 /// 3) create empty list of the same class model datatype to save the data on it
-  List<JobData>? jobsList;
+  late List<JobData> jobsList= [];
   List<JobData>? suggestedJobsList;
   List<JobData>? filteredJobsList;
 
