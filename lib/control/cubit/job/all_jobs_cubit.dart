@@ -22,8 +22,8 @@ class AllJobsCubit extends Cubit<AllJobsState> {
 
 /// 3) create empty list of the same class model datatype to save the data on it
   late List<JobData> jobsList= [];
-  List<JobData>? suggestedJobsList;
-  List<JobData>? filteredJobsList;
+  List<JobData> suggestedJobsList = [];
+  List<JobData> filteredJobsList= [];
 
   /// 4) call get data fn from dio
   ///! get the data from API and put it on  all job list
