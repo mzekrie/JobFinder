@@ -175,13 +175,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   backGround: AppTheme.blueButtonGP,
                                   function: () async {
                                     if (formKey.currentState!.validate()) {
-                                      String? _validate =
+                                      String? validate =
                                           await LoginCubit.get(context)
                                               .loginByEmailAndPassword(
                                                   email: emailController.text,
                                                   password:
                                                       passwordController.text);
-                                      if (_validate != ('errorLogin')) {
+                                      if (validate != ('errorLogin')) {
                                         await CacheHelper.putString(
                                           key: SharedKeys.email,
                                           value: emailController.text,

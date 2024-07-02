@@ -71,7 +71,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               SizedBox(height:0.02*height,),
               Visibility(
                 visible: isLast,
-                replacement: SizedBox(width:20),
+                replacement: const SizedBox(width:20),
                 // defaultButton(text: 'Next',
                 //     width: 0.8*width,
                 //     height: 0.08*height,

@@ -140,7 +140,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                             pickedFile=null;
                             isLoading = false;
                           });
-                        }, icon: Icon(Icons.delete), color: Colors.red,),
+                        }, icon: const Icon(Icons.delete), color: Colors.red,),
                         ],
                       ),),
                     SizedBox(

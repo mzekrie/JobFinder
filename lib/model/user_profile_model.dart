@@ -209,13 +209,13 @@ class UserProfileModel {
 
   UserProfileModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -233,20 +233,20 @@ class Data {
     if (json['portofolio'] != null) {
       portofolio = <Portofolio>[];
       json['portofolio'].forEach((v) {
-        portofolio!.add(new Portofolio.fromJson(v));
+        portofolio!.add(Portofolio.fromJson(v));
       });
     }
     profile =
-    json['profile'] != null ? new Profile.fromJson(json['profile']) : null;
+    json['profile'] != null ? Profile.fromJson(json['profile']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.portofolio != null) {
-      data['portofolio'] = this.portofolio!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (portofolio != null) {
+      data['portofolio'] = portofolio!.map((v) => v.toJson()).toList();
     }
-    if (this.profile != null) {
-      data['profile'] = this.profile!.toJson();
+    if (profile != null) {
+      data['profile'] = profile!.toJson();
     }
     return data;
   }
@@ -281,14 +281,14 @@ class Portofolio {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['cv_file'] = this.cvFile;
-    data['name'] = this.name;
-    data['image'] = this.image;
-    data['user_id'] = this.userId;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['cv_file'] = cvFile;
+    data['name'] = name;
+    data['image'] = image;
+    data['user_id'] = userId;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
     return data;
   }
 }
@@ -351,24 +351,24 @@ class Profile {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['user_id'] = this.userId;
-    data['name'] = this.name;
-    data['image'] = this.image;
-    data['email'] = this.email;
-    data['mobile'] = this.mobile;
-    data['address'] = this.address;
-    data['language'] = this.language;
-    data['interested_work'] = this.interestedWork;
-    data['offline_place'] = this.offlinePlace;
-    data['remote_place'] = this.remotePlace;
-    data['bio'] = this.bio;
-    data['education'] = this.education;
-    data['experience'] = this.experience;
-    data['personal_detailed'] = this.personalDetailed;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['user_id'] = userId;
+    data['name'] = name;
+    data['image'] = image;
+    data['email'] = email;
+    data['mobile'] = mobile;
+    data['address'] = address;
+    data['language'] = language;
+    data['interested_work'] = interestedWork;
+    data['offline_place'] = offlinePlace;
+    data['remote_place'] = remotePlace;
+    data['bio'] = bio;
+    data['education'] = education;
+    data['experience'] = experience;
+    data['personal_detailed'] = personalDetailed;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
     return data;
   }
 }

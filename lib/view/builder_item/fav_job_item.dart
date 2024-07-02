@@ -32,12 +32,12 @@ class _BuilderFavJobsState extends State<BuilderFavJobs> {
       listener: (BuildContext context, state) {
         if (state is LoadingFavJobsState) {
           const Center(
-            child: const CircularProgressIndicator(),
+            child: CircularProgressIndicator(),
           );
         }
         else if (state is ErrorGetFavJobsState) {
           const Center(
-            child: const Column(
+            child: Column(
               children: [
                 Icon(
                   Icons.error,

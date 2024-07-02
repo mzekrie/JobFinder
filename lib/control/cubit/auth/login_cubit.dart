@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/cache_helper.dart';
 import '../../../model/shared/enum.dart';
@@ -36,16 +35,16 @@ class LoginCubit extends Cubit<LoginState> {
         // userModel.name = response.data['name']; // set NULL
         await CacheHelper.putString(
           key: SharedKeys.token, value: userModel.token.toString(),);
-        token_mary = await CacheHelper.getString(key: SharedKeys.token);
+        token_mary = CacheHelper.getString(key: SharedKeys.token);
 
         await CacheHelper.putString(
           key: SharedKeys.name, value: userModel.name.toString(),);
 
-        String nameUserConst = await CacheHelper.getString(key: SharedKeys.name);
+        String nameUserConst = CacheHelper.getString(key: SharedKeys.name);
 
         print("login successfully, response of login data ");
-        print(" string TOKEN is  ${token_mary} post data success");
-        print (" string NAME  is  ${nameUserConst} post data success");
+        print(" string TOKEN is  $token_mary post data success");
+        print (" string NAME  is  $nameUserConst post data success");
         // print (" string USER ID is  ${idUserConst} post data success");
         print(" Status code is  ${response.statusMessage} ");
         emit(LoginSuccessState());
@@ -75,8 +74,8 @@ class LoginCubit extends Cubit<LoginState> {
     emit(UpdateNamePasswordDataState());
     try {
       token_mary = CacheHelper.getString(key: SharedKeys.token);
-      print ("this is token ${token_mary}");
-      print (" this is the password ${password}");
+      print ("this is token $token_mary");
+      print (" this is the password $password");
       var response = await DioHelper.postData(token: token_mary,
           url: endpoint_update_name_password,
           data: {//"name": name,
@@ -112,8 +111,8 @@ class LoginCubit extends Cubit<LoginState> {
     emit(UpdateNamePasswordDataState());
     try {
       token_mary = CacheHelper.getString(key: SharedKeys.token);
-      print ("this is token ${token_mary}");
-      print (" this is the name ${name}");
+      print ("this is token $token_mary");
+      print (" this is the name $name");
       var response = await DioHelper.postData(token: token_mary,
           url: endpoint_update_name_password,
           data: {"name": "name",});

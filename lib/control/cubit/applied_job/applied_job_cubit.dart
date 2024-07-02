@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../model/jobs_applied_model.dart';
@@ -45,29 +44,29 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
   Future applyToJob(String? name,
       String? email,
       String? mobile,
-      String? work_type,
-      File? cv_file,
-      String? cv_file_name,
-      File? other_file,
-      String? other_file_name,) async {
+      String? workType,
+      File? cvFile,
+      String? cvFileName,
+      File? otherFile,
+      String? otherFileName,) async {
     emit(LoadingApplyFormState());
 
     try {
-      String _appliedJobID = await CacheHelper.getString(
+      String appliedJobID = CacheHelper.getString(
           key: SharedKeys.appliedJobID);
       //String _userID = await CacheHelper.getString(key: SharedKeys.userID)
 
-      if (cv_file != null) {
+      if (cvFile != null) {
         FormData formDataCV = FormData.fromMap({
           'cvFile': await MultipartFile.fromFile(
-              cv_file.path, filename: cv_file_name),
+              cvFile.path, filename: cvFileName),
         });}
 
 
-        if (other_file != null) {
+        if (otherFile != null) {
           FormData formDataFile = FormData.fromMap({
             'userFile': await MultipartFile.fromFile(
-                other_file.path, filename: other_file_name),
+                otherFile.path, filename: otherFileName),
           });}
 
       Response response = await DioHelper.postData(
@@ -75,7 +74,7 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
           token: token_mary,
           query: {},
           data: {
-            "jobs_id": _appliedJobID,
+            "jobs_id": appliedJobID,
             "user_id": userID_const, // const until we get it from sharedKeys
             "name": "name",
             "email": "email",

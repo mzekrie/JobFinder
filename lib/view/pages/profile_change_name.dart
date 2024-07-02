@@ -1,10 +1,6 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:image_picker/image_picker.dart';
 import '../../control/cubit/auth/login_cubit.dart';
-import '../../control/cubit/profile/profile__cubit.dart';
 import '../../model/shared/cache_helper.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../model/shared/constant_attribute.dart';
@@ -12,7 +8,6 @@ import '../../model/shared/enum.dart';
 import '../../router/router.dart';
 import '../widget/default_button.dart';
 import '../widget/default_form_field.dart';
-import '../widget/default_phone_field.dart';
 import '../widget/default_text_field.dart';
 
 
@@ -85,11 +80,11 @@ class ChangeNameScreen extends StatelessWidget {
                         function: () async {
                           if (formKey.currentState!.validate()) {
 
-    String? _validate = await LoginCubit.get(context).updateName(
+    String? validate = await LoginCubit.get(context).updateName(
                               name: nameController.text,
                             );
 
-    if (_validate != ('error')) {
+    if (validate != ('error')) {
 
       CacheHelper.putString(key: SharedKeys.name, value: nameController.text);
       Navigator.of(context)

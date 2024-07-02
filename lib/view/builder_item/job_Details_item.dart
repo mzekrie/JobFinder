@@ -337,7 +337,7 @@ class _BuilderJobDetailsState extends State<BuilderJobDetails>
                         key: SharedKeys.appliedJobID,
                         value:("${widget.item.id}"),
                       );
-                      String appliedJOBID = await CacheHelper.getString(key: SharedKeys.appliedJobID);
+                      String appliedJOBID = CacheHelper.getString(key: SharedKeys.appliedJobID);
                       print ('ID of Job is : $appliedJOBID');
                       Navigator.of(context).pushNamedAndRemoveUntil(
                           AppRoute.applyToJobScreen, (route) => false);

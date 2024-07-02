@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 import '../widget/default_text_field.dart';
-import 'message_filter.dart';
 class NotificationNoDataScreen extends StatefulWidget {
   const NotificationNoDataScreen({super.key});
 

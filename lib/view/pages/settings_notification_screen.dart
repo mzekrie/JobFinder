@@ -56,10 +56,10 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               width: double.infinity,
               color: AppTheme.chat_bg_text2_gray,
-              child:  DefaultText(
+              child:  const DefaultText(
                 text: "  Job notification",
                 color: AppTheme.blackGP,
                 fontSize: 17,
@@ -79,7 +79,7 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                         child: Column(
                           children: [
                             SwitchListTile(
-                              title: Text('Your Job Search Alert'), // The title of the ListTile
+                              title: const Text('Your Job Search Alert'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -92,10 +92,10 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
 
                             SwitchListTile(
-                              title: Text('Job Application Update '), // The title of the ListTile
+                              title: const Text('Job Application Update '), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -108,10 +108,10 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
 
                             SwitchListTile(
-                              title: Text('Job Application Reminders'), // The title of the ListTile
+                              title: const Text('Job Application Reminders'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -124,10 +124,10 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
 
                             SwitchListTile(
-                              title: Text('Jobs You May Be Interested In'), // The title of the ListTile
+                              title: const Text('Jobs You May Be Interested In'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -140,9 +140,9 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                             SwitchListTile(
-                              title: Text('Job Seeker Updates'), // The title of the ListTile
+                              title: const Text('Job Seeker Updates'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -155,7 +155,7 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
 
 
                           ],
@@ -167,10 +167,10 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                     ],
                   ),),),),
             Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               width: double.infinity,
               color: AppTheme.chat_bg_text2_gray,
-              child:  DefaultText(
+              child:  const DefaultText(
                 text: "  Other notification",
                 color: AppTheme.blackGP,
                 fontSize: 17,
@@ -190,7 +190,7 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                         child: Column(
                           children: [
                             SwitchListTile(
-                              title: Text('Show Profile'), // The title of the ListTile
+                              title: const Text('Show Profile'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -203,9 +203,9 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                             SwitchListTile(
-                              title: Text('All Message'), // The title of the ListTile
+                              title: const Text('All Message'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -218,9 +218,9 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                             SwitchListTile(
-                              title: Text('Job Seeker Updates'), // The title of the ListTile
+                              title: const Text('Job Seeker Updates'), // The title of the ListTile
                               activeColor:AppTheme.blueLightGP,
                               activeTrackColor: AppTheme.blueButtonGP,
                               //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -233,7 +233,7 @@ class _SettingsNotificationScreenState extends State<SettingsNotificationScreen>
                                 });
                               },
                             ),
-                            Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                            const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
 
 
                           ],

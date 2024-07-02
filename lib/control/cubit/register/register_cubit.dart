@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/constant_attribute.dart';
 import 'package:meta/meta.dart';

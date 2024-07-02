@@ -53,7 +53,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_1.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -67,10 +67,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 controlAffinity: ListTileControlAffinity.trailing,
                 tileColor: AppTheme.blueButtonGP,
@@ -85,7 +85,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_2.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -99,10 +99,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 controlAffinity: ListTileControlAffinity.trailing,
                 tileColor: AppTheme.blueButtonGP,
@@ -117,7 +117,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_3.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -131,10 +131,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 controlAffinity: ListTileControlAffinity.trailing,
                 tileColor: AppTheme.blueButtonGP,
@@ -149,7 +149,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_4.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -163,10 +163,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 value: 5,
                 controlAffinity: ListTileControlAffinity.trailing,
@@ -181,7 +181,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_5.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -195,10 +195,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               /////
               RadioListTile(
                 value: 6,
@@ -214,7 +214,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_6.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -228,10 +228,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 value: 7,
                 controlAffinity: ListTileControlAffinity.trailing,
@@ -246,7 +246,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_7.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -260,10 +260,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 value: 8,
                 controlAffinity: ListTileControlAffinity.trailing,
@@ -278,7 +278,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_8.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -292,10 +292,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 value: 9,
                 controlAffinity: ListTileControlAffinity.trailing,
@@ -310,7 +310,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_9.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -324,10 +324,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
               RadioListTile(
                 value: 10,
                 controlAffinity: ListTileControlAffinity.trailing,
@@ -342,7 +342,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                       child: Image.asset("assets/images/lang_10.png"),
 
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 3,
                       child: Text(
                         "Arabic",
@@ -356,10 +356,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 groupValue: _paymentType,
                 onChanged: (val) => setState(() {
-                  _paymentType = val! as int;
+                  _paymentType = val!;
                 }),
               ),
-              Divider(thickness:1, color: AppTheme.gray,),
+              const Divider(thickness:1, color: AppTheme.gray,),
             ],
           ),
             ),

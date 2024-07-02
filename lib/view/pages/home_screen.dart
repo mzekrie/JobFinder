@@ -14,11 +14,11 @@ class HomeScreen extends StatelessWidget {
   @override
 
   List <Widget> screens =[
-     JobsScreen(),
-     MessageScreen(),
-     AppliedJobsScreen(),
-     SavedJobsScreen(),
-     ProfileScreen()
+     const JobsScreen(),
+     const MessageScreen(),
+     const AppliedJobsScreen(),
+     const SavedJobsScreen(),
+     const ProfileScreen()
   ];
 
   @override

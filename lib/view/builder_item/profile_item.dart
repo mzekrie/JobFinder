@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gp_amit60_mary_zekrie/model/user_profile_model.dart';
-import '../../model/shared/colors_theme.dart';
-import '../../router/router.dart';
-import '../widget/default_text_field.dart';
 
 class BuilderProfile extends StatefulWidget {
   //Profile profileItem;
-  BuilderProfile({super.key});
+  const BuilderProfile({super.key});
   //BuilderProfile({super.key, required this.profileItem});
   @override
   State<BuilderProfile> createState() => _BuilderProfileState();

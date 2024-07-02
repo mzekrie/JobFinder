@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../model/fav_job_model.dart';
 import '../../../model/shared/constant_attribute.dart';

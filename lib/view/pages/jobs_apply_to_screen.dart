@@ -51,17 +51,17 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
 
       if (result_other!= null) {
         // to get the name of the file
-        PlatformFile file_other = result_other!.files.first;
-        _fileName_other = file_other.name;
+        PlatformFile fileOther = result_other!.files.first;
+        _fileName_other = fileOther.name;
         // to save the file itself as a platform
         pickedFile_other= result_other!.files.first;
         // to display the file
         fileToDisplay_other= File(pickedFile_other!.path.toString());
         print('File name is $_fileName_other');
-        print(file_other.bytes);
-        print(file_other.size);
-        print(file_other.extension);
-        print(file_other.path);
+        print(fileOther.bytes);
+        print(fileOther.size);
+        print(fileOther.extension);
+        print(fileOther.path);
 
       }
 
@@ -91,17 +91,17 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
 
       if (result_cv != null) {
         // to get the name of the file
-        PlatformFile file_cv = result_cv!.files.first;
-        _fileName_cv = file_cv.name;
+        PlatformFile fileCv = result_cv!.files.first;
+        _fileName_cv = fileCv.name;
         // to save the file itself as a platform
         pickedFile_cv = result_cv!.files.first;
         // to display the file
         fileToDisplay_cv = File(pickedFile_cv!.path.toString());
         print('File name is $_fileName_cv');
-        print(file_cv.bytes);
-        print(file_cv.size);
-        print(file_cv.extension);
-        print(file_cv.path);
+        print(fileCv.bytes);
+        print(fileCv.size);
+        print(fileCv.extension);
+        print(fileCv.path);
 
       }
 
@@ -120,7 +120,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
     Step(
       state: currentStep > 0 ? StepState.complete:StepState.indexed,
       isActive: currentStep >= 0,
-      title: Text('Bio'),
+      title: const Text('Bio'),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -136,14 +136,14 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
             fontSize: 12,
             fontWeight: FontWeight.normal,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           const DefaultText(
             text: "Full Name*",
             color: AppTheme.blackGP,
             fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           DefaultFormField(
               radius: 10,
               backgroundColor: AppTheme.whiteGP,
@@ -157,14 +157,14 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                   return null;
                 }
               }),
-          SizedBox(height:10),
+          const SizedBox(height:10),
           const DefaultText(
             text: "Email",
             color: AppTheme.blackGP,
             fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           DefaultFormField(
               radius: 10,
               prefixIcon: Image.asset(
@@ -185,7 +185,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                   return null;
                 }
               }),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           DefaultPhoneField(
             controller: handPhoneController,
             validator: (value) {
@@ -206,7 +206,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
     Step(
       state: currentStep > 1 ? StepState.complete:StepState.indexed,
       isActive: currentStep >= 1,
-      title: Text('Work Type '),
+      title: const Text('Work Type '),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -222,7 +222,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
             fontSize: 12,
             fontWeight: FontWeight.normal,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SingleChildScrollView(
@@ -237,7 +237,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     selectedTileColor:AppTheme.blueButtonGP ,
                     activeColor: AppTheme.blueButtonGP,
                     hoverColor:AppTheme.grayLightGP,
-                    title: Row(
+                    title: const Row(
                       children: <Widget>[
                         Expanded(
                           flex: 3,
@@ -253,10 +253,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     ),
                     groupValue: _workType,
                     onChanged: (val) => setState(() {
-                      _workType = val! as String;
+                      _workType = val!;
                     }),
                   ),
-                  Divider(thickness:1, color: AppTheme.gray,),
+                  const Divider(thickness:1, color: AppTheme.gray,),
                   RadioListTile(
                     controlAffinity: ListTileControlAffinity.trailing,
                     tileColor: AppTheme.whiteGP,
@@ -264,7 +264,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     activeColor: AppTheme.blueButtonGP,
                     hoverColor:AppTheme.grayLightGP,
                     value:"Senior UI Designer",
-                    title: Row(
+                    title: const Row(
                       children: <Widget>[
 
                         Expanded(
@@ -281,10 +281,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     ),
                     groupValue: _workType,
                     onChanged: (val) => setState(() {
-                      _workType = val! as String;
+                      _workType = val!;
                     }),
                   ),
-                  Divider(thickness:1, color: AppTheme.gray,),
+                  const Divider(thickness:1, color: AppTheme.gray,),
                   RadioListTile(
                     controlAffinity: ListTileControlAffinity.trailing,
                     tileColor: AppTheme.whiteGP,
@@ -292,7 +292,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     activeColor: AppTheme.blueButtonGP,
                     hoverColor:AppTheme.grayLightGP,
                     value: "Graphik Designer",
-                    title: Row(
+                    title: const Row(
                       children: <Widget>[
 
                         Expanded(
@@ -309,10 +309,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     ),
                     groupValue: _workType,
                     onChanged: (val) => setState(() {
-                      _workType = val! as String;
+                      _workType = val!;
                     }),
                   ),
-                  Divider(thickness:1, color: AppTheme.gray,),
+                  const Divider(thickness:1, color: AppTheme.gray,),
                   RadioListTile(
                     controlAffinity: ListTileControlAffinity.trailing,
                     tileColor: AppTheme.whiteGP,
@@ -320,7 +320,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     activeColor: AppTheme.blueButtonGP,
                     hoverColor:AppTheme.grayLightGP,
                     value: "Front-End Developer",
-                    title: Row(
+                    title: const Row(
                       children: <Widget>[
                         Expanded(
                           flex: 3,
@@ -336,10 +336,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     ),
                     groupValue: _workType,
                     onChanged: (val) => setState(() {
-                      _workType = val! as String;
+                      _workType = val!;
                     }),
                   ),
-                  Divider(thickness:1, color: AppTheme.gray,),
+                  const Divider(thickness:1, color: AppTheme.gray,),
 
                 ],
               ),
@@ -351,7 +351,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
     Step(
       state: currentStep > 2 ? StepState.complete:StepState.indexed,
       isActive: currentStep >= 2,
-      title: Text('Portfolio'),
+      title: const Text('Portfolio'),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -393,10 +393,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     pickedFile_cv=null;
                     isLoading_cv = false;
                   });
-                }, icon: Icon(Icons.delete), color: Colors.red,),
+                }, icon: const Icon(Icons.delete), color: Colors.red,),
               ],
             ),),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
 
@@ -438,10 +438,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                     pickedFile_other=null;
                     isLoading_other= false;
                   });
-                }, icon: Icon(Icons.delete), color: Colors.red,),
+                }, icon: const Icon(Icons.delete), color: Colors.red,),
               ],
             ),),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ],
@@ -471,7 +471,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
           ? buildCompleted()
           :
       Theme(
-        data: Theme.of(context).copyWith(colorScheme: ColorScheme.light(primary: AppTheme.blueButtonGP)),
+        data: Theme.of(context).copyWith(colorScheme: const ColorScheme.light(primary: AppTheme.blueButtonGP)),
         child: Stepper(
           type: StepperType.horizontal,
           steps: getSteps(),
@@ -540,14 +540,14 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
             fontSize: 40,
             fontWeight: FontWeight.bold,
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           const DefaultText(
             text: "You have applied to the job",
             color: AppTheme.blackGP,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
-      SizedBox(height: 20,),
+      const SizedBox(height: 20,),
 
       defaultButton(
                     text:  "Apply to Another Job ",
@@ -559,7 +559,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                           AppRoute.allJobsScreen,
                               (route) => false);
                     } ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
 
           defaultButton(
               text:  "Go To Applied Jobs ",

@@ -25,10 +25,10 @@ class SettingsSecurityScreen extends StatelessWidget {
       body:  Column(
         children: [
           Container(
-            padding: EdgeInsets.all(4),
+            padding: const EdgeInsets.all(4),
             width: double.infinity,
             color: AppTheme.chat_bg_text2_gray,
-            child:  DefaultText(
+            child:  const DefaultText(
               text: "  Accont access",
               color: AppTheme.blackGP,
               fontSize: 17,
@@ -54,7 +54,7 @@ class SettingsSecurityScreen extends StatelessWidget {
 
                         SizedBox(
                           width: 0.7* width,
-                          child:DefaultText(
+                          child:const DefaultText(
                             text: "Full Name ",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -72,7 +72,7 @@ class SettingsSecurityScreen extends StatelessWidget {
 
                       ],
                     ),
-                    Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                    const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                   ],
                 ),
               ),
@@ -87,7 +87,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                         SizedBox(
                           width: 0.7* width,
-                          child:DefaultText(
+                          child:const DefaultText(
                             text: "Email address",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -105,7 +105,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                       ],
                     ),
-                    Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                    const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                   ],
                 ),
               ),
@@ -121,7 +121,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                         SizedBox(
                           width: 0.7* width,
-                          child:DefaultText(
+                          child:const DefaultText(
                             text: "Phone number",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -139,7 +139,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                       ],
                     ),
-                    Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                    const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                   ],
                 ),
               ),
@@ -155,7 +155,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                         SizedBox(
                           width: 0.7* width,
-                          child:DefaultText(
+                          child:const DefaultText(
                             text: "Change password",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -173,7 +173,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                       ],
                     ),
-                    Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                    const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                   ],
                 ),
               ),
@@ -189,7 +189,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                         SizedBox(
                           width: 0.7* width,
-                          child:DefaultText(
+                          child:const DefaultText(
                             text: "Two-step verification",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -207,7 +207,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                       ],
                     ),
-                    Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                    const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                   ],
                 ),
               ),
@@ -222,7 +222,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                         SizedBox(
                           width: 0.7* width,
-                          child:DefaultText(
+                          child:const DefaultText(
                             text: "Face ID",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -240,7 +240,7 @@ class SettingsSecurityScreen extends StatelessWidget {
           
                       ],
                     ),
-                    Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
+                    const Expanded(child: Divider(thickness: 1,color:AppTheme.gray2)),
                   ],
                 ),
               ),

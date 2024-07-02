@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../model/jobs_all_model.dart';
 import '../../model/jobs_applied_model.dart';
 import '../../model/shared/colors_theme.dart';
-import '../../router/router.dart';
 import '../widget/default_text_field.dart';
 
 class BuilderAppliedJobs extends StatefulWidget {

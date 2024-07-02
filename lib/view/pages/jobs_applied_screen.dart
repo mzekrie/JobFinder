@@ -1,17 +1,10 @@
-import 'dart:io';
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_amit60_mary_zekrie/control/cubit/applied_job/applied_job_cubit.dart';
-import 'package:gp_amit60_mary_zekrie/model/shared/constant_attribute.dart';
 import 'package:gp_amit60_mary_zekrie/view/builder_item/job_applied_item.dart';
 
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
-import '../widget/default_button.dart';
-import '../widget/default_form_field.dart';
-import '../widget/default_phone_field.dart';
-import '../widget/default_text_field.dart';
 //import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppliedJobsScreen extends StatefulWidget {

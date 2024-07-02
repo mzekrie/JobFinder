@@ -81,7 +81,7 @@ Route? onGenerateRouter(RouteSettings settings){
     case AppRoute.jobsDetailsScreen :
       return MaterialPageRoute(builder: (_)=> const JobsDetailsScreen());
     case AppRoute.savedJobsScreen :
-      return MaterialPageRoute(builder: (_)=>  SavedJobsScreen());
+      return MaterialPageRoute(builder: (_)=>  const SavedJobsScreen());
 
     case AppRoute.filteredJobsScreen :
       return MaterialPageRoute(builder: (_)=> const FilteredJobsScreen());
@@ -105,7 +105,7 @@ Route? onGenerateRouter(RouteSettings settings){
 
 /// profile
     case AppRoute.profileScreen :
-      return MaterialPageRoute(builder: (_)=> ProfileScreen());
+      return MaterialPageRoute(builder: (_)=> const ProfileScreen());
     case AppRoute.completeProfileScreen :
       return MaterialPageRoute(builder: (_)=> const CompleteProfileScreen());
 
@@ -118,7 +118,7 @@ Route? onGenerateRouter(RouteSettings settings){
       case AppRoute.profileEditScreen :
       return MaterialPageRoute(builder: (_)=> const ProfileEditScreen());
     case AppRoute.portfolioScreen :
-      return MaterialPageRoute(builder: (_)=>  PortfolioScreen());
+      return MaterialPageRoute(builder: (_)=>  const PortfolioScreen());
     case AppRoute.settingsLanguageScreen :
       return MaterialPageRoute(builder: (_)=> const SettingsLanguageScreen());
     case AppRoute.settingsNotificationScreen :
@@ -142,14 +142,14 @@ Route? onGenerateRouter(RouteSettings settings){
   case AppRoute.changePhoneScreen :
   return MaterialPageRoute(builder: (_)=> const ChangePhoneScreen());
    case AppRoute.changeEmailScreen :
-    return MaterialPageRoute(builder: (_)=> ChangeEmailScreen());
+    return MaterialPageRoute(builder: (_)=> const ChangeEmailScreen());
     case AppRoute.changeNameScreen :
-      return MaterialPageRoute(builder: (_)=> ChangeNameScreen());
+      return MaterialPageRoute(builder: (_)=> const ChangeNameScreen());
 
 
       /// Notification
     case AppRoute.notificationScreen :
-      return MaterialPageRoute(builder: (_)=> NotificationScreen());
+      return MaterialPageRoute(builder: (_)=> const NotificationScreen());
 
     case AppRoute.notificationNoDataScreen :
       return MaterialPageRoute(builder: (_)=> const NotificationNoDataScreen());

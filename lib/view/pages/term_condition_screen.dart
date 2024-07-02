@@ -66,7 +66,7 @@ class TermsConditionsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: height * 0.02,),
                 Container(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   // color: AppTheme.grayGP,
                   height: 0.1*height,
                   width: double.infinity,

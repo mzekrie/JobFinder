@@ -52,7 +52,7 @@ class HelpCenterScreen extends StatelessWidget {
                           color: AppTheme.gray,
                         ),
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(width: 0.05, color:AppTheme.gray2),
+                          borderSide: const BorderSide(width: 0.05, color:AppTheme.gray2),
                           borderRadius: BorderRadius.circular(35.5),
 
                         ),
@@ -63,10 +63,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -74,7 +74,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,
@@ -84,10 +84,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -95,7 +95,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,
@@ -105,10 +105,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -116,7 +116,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,
@@ -126,10 +126,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -137,7 +137,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,
@@ -147,10 +147,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -158,7 +158,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,
@@ -168,10 +168,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -179,7 +179,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,
@@ -189,10 +189,10 @@ class HelpCenterScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 0.02* height,),
-                  ExpansionTile(
+                  const ExpansionTile(
                     backgroundColor: AppTheme.whiteGP,
                     collapsedBackgroundColor: AppTheme.profile_baby_blue,
-                    title: const DefaultText(
+                    title: DefaultText(
                       text: "Lorem ipsum dolor sit amet",
                       color: AppTheme.blackGP,
                       fontSize: 12,
@@ -200,7 +200,7 @@ class HelpCenterScreen extends StatelessWidget {
                     ),
                     children: <Widget>[
                       ListTile(
-                        title: const DefaultText(
+                        title: DefaultText(
                           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel augue sit amet est molestie viverra. Nunc quis bibendum orci. Donec feugiat massa mi, at hendrerit mauris rutrum at. ",
                           color: AppTheme.grayGP,
                           fontSize: 12,

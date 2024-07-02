@@ -1,8 +1,5 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
-import '../../control/cubit/auth/login_cubit.dart';
 import '../../control/cubit/profile/profile__cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../model/shared/constant_attribute.dart';
@@ -216,7 +213,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   Widget buttomSheet() {
     return Padding(
       padding: const EdgeInsets.all(18.0),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         height: 150,
         child: Column(

@@ -124,11 +124,11 @@ class ChangePasswordScreen extends StatelessWidget {
                         if (formKeyPassword.currentState!.validate()) {
 
                           //('error')
-                          String? _validate = await LoginCubit.get(context).updatePassword(
+                          String? validate = await LoginCubit.get(context).updatePassword(
                             password: newPasswordController.text,
                           );
 
-                          if (_validate != ('error')) {
+                          if (validate != ('error')) {
 
                             CacheHelper.putBOOL(key: SharedKeys.rememberMeLogin, value: false);
                             Navigator.of(context)

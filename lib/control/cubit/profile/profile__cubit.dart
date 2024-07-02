@@ -57,7 +57,7 @@ late File image;
       emit(SuccessLoadingPortfolioDataState());
     }
     catch(error){
-        print("error getting portfolio:  ${error} ");
+        print("error getting portfolio:  $error ");
         emit(ErrorLoadingPortfolioDataState());
       }
   }
@@ -123,7 +123,7 @@ late File image;
       }
     }}
     catch(error){
-      print("error uploading profile CV with error ${error} ");
+      print("error uploading profile CV with error $error ");
       emit(ErrorAddingPortfolioDataState());
     }
 

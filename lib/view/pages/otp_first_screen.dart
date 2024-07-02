@@ -1,12 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:timer_count_down/timer_count_down.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../model/shared/constant_attribute.dart';
 import '../../router/router.dart';
 import '../widget/default_button.dart';
-import '../widget/default_form_field.dart';
 import '../widget/default_text_field.dart';
 
 class FirstOTPScreen extends StatefulWidget {
@@ -66,7 +64,7 @@ class _FirstOTPScreenState extends State<FirstOTPScreen> {
               children: [
 
                 SwitchListTile(
-                  title: Text('Secure your account with two-step verification'), // The title of the ListTile
+                  title: const Text('Secure your account with two-step verification'), // The title of the ListTile
                   activeColor:AppTheme.blueLightGP,
                   activeTrackColor: AppTheme.blueButtonGP,
                   //secondary: Icon(Icons.lightbulb_outline), // Optional leading icon
@@ -86,12 +84,47 @@ class _FirstOTPScreenState extends State<FirstOTPScreen> {
                   //maintainAnimation: true,
                   //maintainState: true,
                   visible: _switchValue1,
+                  replacement: Column(
+                    children: [
+                       Row(
+                         children: [
+                           Image.asset("assets/images/otp1.png"),
+                           SizedBox(width: 0.02*width,),
+                           SizedBox(
+                             width: 0.8*width,
+                             child: const DefaultText(
+                              text : "Two-step verification provides additional security by asking for a verification code every time you log in on another device.",
+                              color: AppTheme.grayGP,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                                                   ),
+                           ),
+                         ],
+                       ),
+                      SizedBox(height: 0.02*height,),
+                      Row(
+                        children: [
+                          Image.asset("assets/images/otp2.png"),
+                          SizedBox(width: 0.02*width,),
+                          SizedBox(
+                            width: 0.8*width,
+                            child: const DefaultText(
+                              text : "Adding a phone number or using an authenticator will help keep your account safe from harm.",
+                              color: AppTheme.grayGP,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        DefaultText(
+                        const DefaultText(
                           text : "Select a verification method",
                           color: AppTheme.blackGP,
                           fontSize: 17,
@@ -110,7 +143,7 @@ class _FirstOTPScreenState extends State<FirstOTPScreen> {
                               child: Text(dropdownvalue),
                             );
                           }).toList(),
-                          hint:DefaultText(
+                          hint:const DefaultText(
                             text : " -- Select --",
                             color: AppTheme.blackGP,
                             fontSize: 15,
@@ -147,41 +180,6 @@ class _FirstOTPScreenState extends State<FirstOTPScreen> {
                         ),
                       ],
                     ),
-                  ),
-                  replacement: Column(
-                    children: [
-                       Row(
-                         children: [
-                           Image.asset("assets/images/otp1.png"),
-                           SizedBox(width: 0.02*width,),
-                           Container(
-                             width: 0.8*width,
-                             child: const DefaultText(
-                              text : "Two-step verification provides additional security by asking for a verification code every time you log in on another device.",
-                              color: AppTheme.grayGP,
-                              fontSize: 15,
-                              fontWeight: FontWeight.normal,
-                                                   ),
-                           ),
-                         ],
-                       ),
-                      SizedBox(height: 0.02*height,),
-                      Row(
-                        children: [
-                          Image.asset("assets/images/otp2.png"),
-                          SizedBox(width: 0.02*width,),
-                          Container(
-                            width: 0.8*width,
-                            child: const DefaultText(
-                              text : "Adding a phone number or using an authenticator will help keep your account safe from harm.",
-                              color: AppTheme.grayGP,
-                              fontSize: 15,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
                   ),
                 ),
 

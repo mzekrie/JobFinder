@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gp_amit60_mary_zekrie/control/cubit/auth/login_cubit.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/constant_attribute.dart';
 import '../../control/cubit/job/all_jobs_cubit.dart';
 import '../../model/shared/colors_theme.dart';

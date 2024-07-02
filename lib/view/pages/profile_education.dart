@@ -118,7 +118,7 @@ class _ProfileEducationScreenState extends State<ProfileEducationScreen> {
                       SizedBox(height: 0.02 * height),
                       DefaultFormField(
                           radius: 10,
-                          suffixIcon: Icon(Icons.calendar_month_outlined) ,
+                          suffixIcon: const Icon(Icons.calendar_month_outlined) ,
                           backgroundColor: AppTheme.whiteGP,
                           controller: startYearController,
                           keyboardType: TextInputType.text,
@@ -153,7 +153,7 @@ class _ProfileEducationScreenState extends State<ProfileEducationScreen> {
                       SizedBox(height: 0.02 * height),
                       DefaultFormField(
                           radius: 10,
-                          suffixIcon: Icon(Icons.calendar_month_outlined) ,
+                          suffixIcon: const Icon(Icons.calendar_month_outlined) ,
                           backgroundColor: AppTheme.whiteGP,
                           controller: endYearController,
                           keyboardType: TextInputType.datetime,
@@ -240,7 +240,7 @@ class _ProfileEducationScreenState extends State<ProfileEducationScreen> {
                   //maintainAnimation: true,
                   //maintainState: true,
                   visible: isUniveristyAdded ,
-                  replacement:Center(
+                  replacement:const Center(
                     child: DefaultText(
                       text : "No Data ",
                       color: AppTheme.blackGP,
@@ -254,7 +254,7 @@ class _ProfileEducationScreenState extends State<ProfileEducationScreen> {
                     children: [
                       Image.asset("assets/images/education.png"),
                       SizedBox(width:width*0.03),
-                      Container(
+                      SizedBox(
                         width:0.4*width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

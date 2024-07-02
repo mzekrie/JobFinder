@@ -183,7 +183,7 @@ class _ProfileExperienceScreenState extends State<ProfileExperienceScreen> {
                     SizedBox(height: 0.01 * height),
                     DefaultFormField(
                         radius: 10,
-                        suffixIcon: Icon(Icons.calendar_month_outlined) ,
+                        suffixIcon: const Icon(Icons.calendar_month_outlined) ,
                         backgroundColor: AppTheme.whiteGP,
                         controller: startYearExperienceController,
                         keyboardType: TextInputType.text,
@@ -254,7 +254,7 @@ class _ProfileExperienceScreenState extends State<ProfileExperienceScreen> {
                           SizedBox(height: 0.01 * height),
                           DefaultFormField(
                               radius: 10,
-                              suffixIcon: Icon(Icons.calendar_month_outlined) ,
+                              suffixIcon: const Icon(Icons.calendar_month_outlined) ,
                               backgroundColor: AppTheme.whiteGP,
                               controller: endYearExperienceController,
                               keyboardType: TextInputType.datetime,
@@ -280,7 +280,7 @@ class _ProfileExperienceScreenState extends State<ProfileExperienceScreen> {
                           ),
                         ],
                       ),
-                      child: DefaultText(
+                      child: const DefaultText(
                         text: "Job has not ended yet ",
                         color: AppTheme.blackGP,
                         fontSize: 15,
@@ -354,7 +354,7 @@ class _ProfileExperienceScreenState extends State<ProfileExperienceScreen> {
                   //maintainAnimation: true,
                   //maintainState: true,
                   visible: isExperienceAdded ,
-                  replacement:Center(
+                  replacement:const Center(
                     child: DefaultText(
                       text : "No Data ",
                       color: AppTheme.blackGP,
@@ -368,7 +368,7 @@ class _ProfileExperienceScreenState extends State<ProfileExperienceScreen> {
                     children: [
                       Image.asset("assets/images/experience.png"),
                       SizedBox(width:width*0.03),
-                      Container(
+                      SizedBox(
                         width:0.4*width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

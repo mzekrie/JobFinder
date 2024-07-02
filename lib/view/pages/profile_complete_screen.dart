@@ -20,9 +20,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
 
   List<Color> colorList = [
     // blue
-    Color(0xff3366ff),
+    const Color(0xff3366ff),
  // gray
-   Color(0xffe5e7eb),
+   const Color(0xffe5e7eb),
 
   ];
 
@@ -50,7 +50,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
         child: Container(
           color: AppTheme. whiteGP,
           width: double.maxFinite,
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,13 +60,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               SizedBox(height: 0.02* height),
               PieChart(
                 dataMap: dataMap,
-                centerWidget: Container(color: AppTheme. whiteGP, child: DefaultText(
+                centerWidget: Container(color: AppTheme. whiteGP, child: const DefaultText(
           text: " 50%",
           color: AppTheme.blueButtonGP,
           fontSize: 40,
           fontWeight: FontWeight.normal,
           ),),
-                animationDuration: Duration(milliseconds: 800),
+                animationDuration: const Duration(milliseconds: 800),
                 chartLegendSpacing: 30,
                 chartRadius: MediaQuery.of(context).size.width / 3,
                 colorList: colorList,
@@ -74,7 +74,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 chartType: ChartType.ring,
                 ringStrokeWidth: 10,
                 centerText: "HYBRID",
-                legendOptions: LegendOptions(
+                legendOptions: const LegendOptions(
                   showLegendsInRow: false,
                   legendPosition: LegendPosition.right,
                   showLegends: true,
@@ -83,7 +83,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                chartValuesOptions: ChartValuesOptions(
+                chartValuesOptions: const ChartValuesOptions(
                   showChartValueBackground: true,
                   showChartValues: false,
                   showChartValuesInPercentage: true,
@@ -96,13 +96,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               ),
               SizedBox(height: 0.02* height),
         
-              DefaultText(
+              const DefaultText(
                 text: " 2/4 Completed",
                 color: AppTheme.blueButtonGP,
                 fontSize: 30,
                 fontWeight: FontWeight.normal,
               ),
-              DefaultText(
+              const DefaultText(
                 text: "Complete your profile before applying for a job",
                 color: AppTheme.grayGP,
                 fontSize: 15,
@@ -111,7 +111,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
         SizedBox(height: height * 0.02,),
               Container(
                 height: height * 0.12,
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                     border: Border.all(
                       width: 1,
@@ -131,16 +131,16 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     ),
                     SizedBox(
                       width: 0.6* width,
-                      child:Column(
+                      child:const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const DefaultText(
+                          DefaultText(
                             text: "Personal Details",
                             color: AppTheme.blackGP,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
-                          const DefaultText(
+                          DefaultText(
                             text: "Full name, email, phone number, and your address",
                             color: AppTheme.grayGP,
                             fontSize: 14,
@@ -163,7 +163,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               SizedBox(height: height * 0.02,),
               Container(
                   height: height * 0.12,
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       border: Border.all(
                         width: 1,
@@ -215,7 +215,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               SizedBox(height: height * 0.02,),
               Container(
                   height: height * 0.12,
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       border: Border.all(
                         width: 1,
@@ -238,13 +238,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         child:const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const DefaultText(
+                            DefaultText(
                               text: "Experience",
                               color: AppTheme.blackGP,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
-                            const DefaultText(
+                            DefaultText(
                               text: "Enter your work experience to be considered by the recruiter",
                               color: AppTheme.grayGP,
                               fontSize: 14,
@@ -267,7 +267,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               SizedBox(height: height * 0.02,),
               Container(
                   height: height * 0.12,
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       border: Border.all(
                         width: 1,

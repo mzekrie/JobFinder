@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:timer_count_down/timer_count_down.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../model/shared/constant_attribute.dart';
 import '../../router/router.dart';

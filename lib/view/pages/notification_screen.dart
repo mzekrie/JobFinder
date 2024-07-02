@@ -46,7 +46,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                 fontSize: 16.0
                             );
             },
-            child: DefaultText(
+            child: const DefaultText(
               text: " Clear     ",
               color: AppTheme.blueButtonGP,
               fontSize: 15,
@@ -62,10 +62,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
         children: [
           Container(
-            padding: EdgeInsets.all(4),
+            padding: const EdgeInsets.all(4),
             width: double.infinity,
             color: AppTheme.chat_bg_text2_gray,
-            child:  DefaultText(
+            child:  const DefaultText(
               text: "  New",
               color: AppTheme.blackGP,
               fontSize: 17,
@@ -92,10 +92,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(4),
+            padding: const EdgeInsets.all(4),
             width: double.infinity,
             color: AppTheme.chat_bg_text2_gray,
-            child:  DefaultText(
+            child:  const DefaultText(
               text: "  Yesterday",
               color: AppTheme.blackGP,
               fontSize: 17,

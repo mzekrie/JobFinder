@@ -33,7 +33,7 @@ class FavJobsOptions extends StatelessWidget {
                 ),
                 SizedBox(height: 0.03*height,),
 
-                DefaultText(
+                const DefaultText(
                   text: "Select one of the following options ",
                   color: AppTheme.blueButtonGP,
                   fontSize: 20,

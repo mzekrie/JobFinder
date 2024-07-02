@@ -63,14 +63,14 @@ class JobsScreen extends StatelessWidget {
                 ),
 
                 Container (
-                  padding: EdgeInsets.only(left:10, top:1, bottom:1, right: 10),
+                  padding: const EdgeInsets.only(left:10, top:1, bottom:1, right: 10),
                   width: 0.9*width,
                     decoration: BoxDecoration(
 borderRadius: BorderRadius.circular(40),
 color:  AppTheme.profile_baby_blue),
                   child: Row(
                     children: [
-                      DefaultText(
+                      const DefaultText(
                         text: ("Search yor Job "),
                         color: AppTheme.grayGP,
                         fontSize: 15,
@@ -163,7 +163,7 @@ color:  AppTheme.profile_baby_blue),
                 BlocBuilder<AllJobsCubit, AllJobsState>(
   builder: (context, state) {
     return Expanded(
-      child: Container(
+      child: SizedBox(
         height: 1.5 * height,
                     child: ListView.separated(
                       shrinkWrap: true,

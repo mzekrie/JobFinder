@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gp_amit60_mary_zekrie/model/message_model.dart';
 import '../../model/notification_alert_model.dart';
 import '../../model/shared/colors_theme.dart';
-import '../../router/router.dart';
 import '../widget/default_text_field.dart';
 
 class BuilderNotification extends StatelessWidget {

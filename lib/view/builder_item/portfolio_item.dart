@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gp_amit60_mary_zekrie/model/user_profile_model.dart';
-import '../../model/shared/colors_theme.dart';
-import '../../router/router.dart';
-import '../widget/default_text_field.dart';
 
 class BuilderPortfolio extends StatelessWidget {
   Portofolio item;

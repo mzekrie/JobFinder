@@ -1,18 +1,13 @@
 
 /// code using API but it gives error
+library;
 
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/control/cubit/fav_job/fav_jobs_cubit.dart';
-import 'package:gp_amit60_mary_zekrie/control/cubit/job/all_jobs_cubit.dart';
 import 'package:gp_amit60_mary_zekrie/view/builder_item/fav_job_item.dart';
-import 'package:gp_amit60_mary_zekrie/view/pages/jobs_filter.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
-import '../builder_item/all_job_item.dart';
-import '../widget/default_text_field.dart';
 
 class SavedJobsScreen extends StatefulWidget {
   const SavedJobsScreen({super.key});
@@ -37,7 +32,7 @@ class _SavedJobsScreenState extends State<SavedJobsScreen> {
             title: const Text("Saved job "),
 
           ),
-          body:  Container(
+          body:  SizedBox(
       width: 300,
       height: height,
       child: ListView.separated(

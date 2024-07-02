@@ -54,7 +54,7 @@ class ThirdOTPScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
 
-                    Container(
+                    SizedBox(
                       height: 0.2* width,
                       width: 0.1* width,
                       child: DefaultFormField(
@@ -72,7 +72,7 @@ class ThirdOTPScreen extends StatelessWidget {
                           }),
                     ),
                     SizedBox(width: 0.02*width,),
-                    Container(
+                    SizedBox(
                       height: 0.2* width,
                       width: 0.1* width,
                       child: DefaultFormField(
@@ -90,7 +90,7 @@ class ThirdOTPScreen extends StatelessWidget {
                           }),
                     ),
                     SizedBox(width: 0.02*width,),
-                    Container(
+                    SizedBox(
                       height: 0.2* width,
                       width: 0.1* width,
                       child: DefaultFormField(
@@ -108,7 +108,7 @@ class ThirdOTPScreen extends StatelessWidget {
                           }),
                     ),
                     SizedBox(width: 0.02*width,),
-                    Container(
+                    SizedBox(
                       height: 0.2* width,
                       width: 0.1* width,
                       child: DefaultFormField(
@@ -126,7 +126,7 @@ class ThirdOTPScreen extends StatelessWidget {
                           }),
                     ),
                     SizedBox(width: 0.02*width,),
-                    Container(
+                    SizedBox(
                       height: 0.2* width,
                       width: 0.1* width,
                       child: DefaultFormField(
@@ -144,7 +144,7 @@ class ThirdOTPScreen extends StatelessWidget {
                           }),
                     ),
                     SizedBox(width: 0.02*width,),
-                    Container(
+                    SizedBox(
                       height: 0.2* width,
                       width: 0.1* width,
                       child: DefaultFormField(
@@ -177,7 +177,7 @@ class ThirdOTPScreen extends StatelessWidget {
             Countdown(
               seconds: 20,
               build: (BuildContext context, double time) => Text(time.toString()),
-              interval: Duration(milliseconds: 100),
+              interval: const Duration(milliseconds: 100),
               onFinished: () {
 
                 print('Timer is done!');

@@ -174,7 +174,7 @@ class RegisterScreen extends StatelessWidget {
                                   function: () async {
                                     if (formKeyRegister.currentState!
                                         .validate()) {
-                                      String? _validate =
+                                      String? validate =
                                           await RegisterCubit.get(context)
                                               .RegisterByEmailAndPassword(
                                                   user_name:
@@ -184,7 +184,7 @@ class RegisterScreen extends StatelessWidget {
                                                   user_password:
                                                       passwordController.text);
 
-                                      if (_validate != ('errorLogin')) {
+                                      if (validate != ('errorLogin')) {
                                         nameController.clear();
                                         emailController.clear();
                                         passwordController.clear();
