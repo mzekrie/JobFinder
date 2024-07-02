@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gp_amit60_mary_zekrie/control/cubit/auth/login_cubit.dart';
 import '../../control/cubit/job/all_jobs_cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
@@ -7,8 +8,20 @@ import '../builder_item/all_job_item.dart';
 import '../widget/default_text_field.dart';
 import 'jobs_all_screen.dart';
 
-class JobsScreen extends StatelessWidget {
+class JobsScreen extends StatefulWidget {
   const JobsScreen({super.key});
+
+  @override
+  State<JobsScreen> createState() => _JobsScreenState();
+}
+
+class _JobsScreenState extends State<JobsScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -94,7 +107,6 @@ color:  AppTheme.profile_baby_blue),
                 ),
                 Row(
                   children: [
-
                     SizedBox(width: 0.7*width,
                     child: const DefaultText(
                       text: ("  Suggested Job "),
@@ -174,7 +186,7 @@ color:  AppTheme.profile_baby_blue),
                         return BuilderAllJobs(
                           item: AllJobsCubit.get(context).jobsList![index],);
                       },
-      
+
                     ),
                   ),
     );
