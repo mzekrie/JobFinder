@@ -67,7 +67,42 @@
 // fontSize: 12,
 // fontWeight: FontWeight.normal,
 // ),
-
+/// bloc consumer
+// body: Stack(
+//   children: [
+//     BlocConsumer<AllJobsCubit, AllJobsState>(
+//       listener: (BuildContext context, state) {
+//         if (state is LoadingAllJobsDataState ) {
+//           Center(
+//             child: CircularProgressIndicator(),
+//           );
+//         }
+//         else if (state is ErrorAllJobsDataState ) {
+//           Center(
+//             child: Column(
+//               children: [
+//                 Icon(
+//                   Icons.error,
+//                   color: AppTheme.kErrorColor,
+//                   size: 60,
+//                 ),
+//                 DefaultText(
+//                   text: "Error in loading list of jobs ",
+//                   color: AppTheme.kErrorColor,
+//                   fontSize: 20,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//               ],
+//             ),
+//           );
+//         } },
+//       builder: (BuildContext context, state) {
+//         return SizedBox(height: 20,);
+//         //AllJobsCubit.get(context).screens[AllJobsCubit.get(context).currentIndex];
+//       },
+//     )
+//   ],
+// ),
 /// customize container
 //https://stackoverflow.com/questions/57777737/flutter-give-container-rounded-border
 /// routing

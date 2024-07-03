@@ -32,47 +32,13 @@ class HomeScreen extends StatelessWidget {
       extendBody: true,
       key: scaffoldKey,
       body: screens[AllJobsCubit.get(context).currentIndex],
-      // body: Stack(
-      //   children: [
-      //     BlocConsumer<AllJobsCubit, AllJobsState>(
-      //       listener: (BuildContext context, state) {
-      //         if (state is LoadingAllJobsDataState ) {
-      //           Center(
-      //             child: CircularProgressIndicator(),
-      //           );
-      //         }
-      //         else if (state is ErrorAllJobsDataState ) {
-      //           Center(
-      //             child: Column(
-      //               children: [
-      //                 Icon(
-      //                   Icons.error,
-      //                   color: AppTheme.kErrorColor,
-      //                   size: 60,
-      //                 ),
-      //                 DefaultText(
-      //                   text: "Error in loading list of jobs ",
-      //                   color: AppTheme.kErrorColor,
-      //                   fontSize: 20,
-      //                   fontWeight: FontWeight.bold,
-      //                 ),
-      //               ],
-      //             ),
-      //           );
-      //         } },
-      //       builder: (BuildContext context, state) {
-      //         return SizedBox(height: 20,);
-      //         //AllJobsCubit.get(context).screens[AllJobsCubit.get(context).currentIndex];
-      //       },
-      //     )
-      //   ],
-      // ),
+
 
       bottomNavigationBar: BottomNavigationBar(
           selectedFontSize: 12,
           unselectedFontSize: 10,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           selectedItemColor: AppTheme.blueButtonGP,
           unselectedItemColor: AppTheme.grayGP,
           elevation: 0,
