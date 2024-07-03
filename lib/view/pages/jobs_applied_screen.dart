@@ -1,12 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/control/cubit/applied_job/applied_job_cubit.dart';
 import 'package:gp_amit60_mary_zekrie/view/builder_item/job_applied_item.dart';
-
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
-//import 'package:flutter_bloc/flutter_bloc.dart';
+import '../widget/default_text_field.dart';
 
 class AppliedJobsScreen extends StatefulWidget {
   const AppliedJobsScreen({super.key});
@@ -34,7 +32,37 @@ class _AppliedJobsScreenState extends State<AppliedJobsScreen> {
         title: const Text("Applied Job",
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
       ),
-      body: Expanded(
+      body: BlocConsumer<AppliedJobCubit, AppliedJobState>(
+  listener: (context, state) {
+    // TODO: implement listener
+      if (state is LoadingAppliedJobState ) {
+          const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+      else if (state is ErrorGetAppliedJobState )  {
+       const  Center(
+            child: Column(
+              children: [
+                Icon(
+                  Icons.error,
+                  color: AppTheme.kErrorColor,
+                  size: 60,
+                ),
+                 DefaultText(
+                  text: "Error in loading list of jobs ",
+                  color: AppTheme.kErrorColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ],
+            ),
+          );
+      }
+  },
+
+  builder: (context, state) {
+    return Expanded(
         child: ListView.separated(
           separatorBuilder: (context, index) => SizedBox(height: height* 0.02,),
           itemCount: AppliedJobCubit.get(context).appliedJobsList!.length,
@@ -44,7 +72,9 @@ class _AppliedJobsScreenState extends State<AppliedJobsScreen> {
           },
 
         ),
-      )
+      );
+  },
+)
     );
   }
 }
