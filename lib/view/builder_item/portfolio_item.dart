@@ -20,7 +20,6 @@ class _BuilderPortfolioState extends State<BuilderPortfolio> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-
     /// to control tabs
     return  Padding(
       padding: const EdgeInsets.all(12.0),
