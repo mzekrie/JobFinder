@@ -29,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: AppTheme.profile_baby_blue,
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).popAndPushNamed(AppRoute.homeScreen);
+              Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.homeScreen, (route) => false);
             },
             icon: Image.asset(
               "assets/images/arrow-left.png",

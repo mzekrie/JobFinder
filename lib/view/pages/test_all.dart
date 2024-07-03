@@ -106,4 +106,4 @@
 /// customize container
 //https://stackoverflow.com/questions/57777737/flutter-give-container-rounded-border
 /// routing
-// Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.notificationNoDataScreen, (route) => false););
+// Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.notificationNoDataScreen, (route) => false);
