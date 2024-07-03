@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gp_amit60_mary_zekrie/control/cubit/auth/login_cubit.dart';
 import '../../control/cubit/job/all_jobs_cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';

@@ -23,13 +23,13 @@ late File image;
   /// 3) create empty list of the same class model datatype to save the data on it
 
   List<Profile>? profileList;
-  List<Portofolio>?  portofolioList;
+  List<Portofolio> portofolioList = [];
   /// 4) call get data fn from dio
   ///! get the data from API
 
  getProfileDataAll() async {
     emit(LoadingProfileDataState());
-    Response response = await DioHelper.getData(url: endpoint_get_portofolio,token: token_mary).then((value) {
+    var response = await DioHelper.getData(url: endpoint_get_portofolio,token: token_mary).then((value) {
       // converting data from json and map it to the model and then add it to a list
       userProfileModel = UserProfileModel.fromJson(value.data["profile"]);
       print(userProfileModel);
@@ -48,7 +48,7 @@ late File image;
 
     try {
       emit(LoadingPortfolioDataState());
-      Response response = await DioHelper.getData(
+      var response = await DioHelper.getData(
           url: endpoint_get_portofolio, token: token_mary);
       // converting data from json and map it to the model and then add it to a list
       userPortfolioModel = UserProfileModel.fromJson(response.data["portofolio"]);

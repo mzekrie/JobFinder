@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         onGenerateRoute: onGenerateRouter,
-        //initialRoute: AppRoute.registerScreen,
+       // initialRoute: AppRoute.portfolioScreen,
           initialRoute: AppRoute.splashScreen,
 
 

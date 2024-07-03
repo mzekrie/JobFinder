@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gp_amit60_mary_zekrie/view/builder_item/portfolio_item.dart';
 import '../../control/cubit/profile/profile__cubit.dart';
 import '../../model/shared/colors_theme.dart';
@@ -72,7 +73,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).popAndPushNamed(AppRoute.homeScreen);
+              Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileScreen, (route) => false);
             },
             icon: Image.asset(
               "assets/images/arrow-left.png",
@@ -82,121 +83,173 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
           "Portfolio Screen",
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 0.25 * height,
-              width: 0.9 * width,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1,
-                    color: AppTheme
-                        .blueButtonGP,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                  color: AppTheme.profile_baby_blue),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+      body: BlocBuilder<ProfileCubit, ProfileState>(
+  builder: (context, state) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          height: 0.25 * height,
+          width: 0.9 * width,
+          decoration: BoxDecoration(
+              border: Border.all(
+                width: 1,
+                color: AppTheme
+                    .blueButtonGP,
+              ),
+              borderRadius: BorderRadius.circular(25),
+              color: AppTheme.profile_baby_blue),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Visibility(visible: (pickedFile!=null),
+                  replacement:  Column(
                   children: [
-                    Visibility(visible: (pickedFile!=null),
-                      replacement:  Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              pickFile();
-                            },
-                            icon: Image.asset('assets/images/uploadfile.png')),
+                    IconButton(
+                        onPressed: () {
+                          pickFile();
+                        },
+                        icon: Image.asset('assets/images/uploadfile.png')),
 
-                        const DefaultText(
-                          text: "click icon to upload your file ",
+                    const DefaultText(
+                      text: "click icon to upload your file ",
+                      color: AppTheme.blackGP,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    const DefaultText(
+                      text: "Max. file size 10 MB ",
+                      color: AppTheme.grayGP,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ],
+                ),
+                  child:  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const DefaultText(
+                      text: "File is uploaded",
+                      color: AppTheme.blackGP,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                                      ),
+                    IconButton(onPressed: (){
+                      setState(() {
+                        pickedFile=null;
+                        isLoading = false;
+                      });
+                    }, icon: const Icon(Icons.delete), color: Colors.red,),
+                    ],
+                  ),),
+                SizedBox(
+                  height: 0.01 * height,
+                ),
+
+                ///button
+                defaultButton(
+                    text: 'Add file',
+                    radius: 25,
+                    backGround: AppTheme.blueButtonGP,
+                    function: () async {
+                      //if (formKeyPortfolio.currentState!.validate()) {
+                      /// what we will do is here
+                      if (pickedFile != null) {
+                        ProfileCubit.get(context).uploadImageAndCVFile(pickedFile:fileToDisplay, fileName:_fileName!);
+                        Fluttertoast.showToast(
+                            msg: "Uploaded Successfully!",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 3,
+                            backgroundColor: Colors.green,
+                            textColor: Colors.white,
+                            fontSize: 16.0);
+
+                      } else {
+                        return null;
+                      }
+                    }),
+
+
+              ]),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Container(
+            padding: const EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+                border:Border.all(
+                  width: 1,
+                  color: AppTheme.grayGP,  //                   <--- border width here
+                ),
+                borderRadius: BorderRadius.circular(10),
+                color:  AppTheme.whiteGP),
+
+            child:Row(
+              children: [
+                Image.asset("assets/images/pdf.png"),
+                SizedBox(width: 0.01 * width),
+
+                SizedBox(
+                  width: 0.4 * width,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        DefaultText(
+                          text: ("UX Design "),
+                          //text: ("${widget.item.name}"),
                           color: AppTheme.blackGP,
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
-                        const DefaultText(
-                          text: "Max. file size 10 MB ",
-                          color: AppTheme.grayGP,
-                          fontSize: 12,
+                        SizedBox(height: 0.01 * height),
+                        DefaultText(
+                          text: ("CV.pdf 300KB"),
+                          //text: ("${widget.item.name}"),
+                          color: AppTheme.gray,
+                          fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
-                      ],
-                    ),
-                      child:  Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const DefaultText(
-                          text: "File is uploaded",
-                          color: AppTheme.blackGP,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                                          ),
-                        IconButton(onPressed: (){
-                          setState(() {
-                            pickedFile=null;
-                            isLoading = false;
-                          });
-                        }, icon: const Icon(Icons.delete), color: Colors.red,),
-                        ],
-                      ),),
-                    SizedBox(
-                      height: 0.01 * height,
-                    ),
-
-                    ///button
-                    defaultButton(
-                        text: 'Add file',
-                        radius: 25,
-                        backGround: AppTheme.blueButtonGP,
-                        function: () async {
-                          //if (formKeyPortfolio.currentState!.validate()) {
-                          /// what we will do is here
-                          if (pickedFile != null) {
-                            ProfileCubit.get(context).uploadImageAndCVFile(pickedFile:fileToDisplay, fileName:_fileName!);
-                            // Fluttertoast.showToast(
-                            //     msg: "Uploaded Successfully!",
-                            //     toastLength: Toast.LENGTH_SHORT,
-                            //     gravity: ToastGravity.BOTTOM,
-                            //     timeInSecForIosWeb: 3,
-                            //     backgroundColor: Colors.green,
-                            //     textColor: Colors.white,
-                            //     fontSize: 16.0);
-
-                          } else {
-                            return null;
-                          }
-                        }),
-
-
-                  ]),
-            ),
-           
-       
-            BlocBuilder<ProfileCubit, ProfileState>(
-  builder: (context, state) {
-    return Expanded(
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  separatorBuilder: (context, index) => SizedBox(height: height* 0.02,),
-                  itemCount: ProfileCubit.get(context).portofolioList!.length,
-                  itemBuilder: (context , index){
-                    return BuilderPortfolio(
-                      item: ProfileCubit.get(context).portofolioList![index],
-                    );
-                  },
-        
+                      ]
+                  ),
                 ),
-              );
+                SizedBox(width: 0.1 * width),
+                IconButton(onPressed: (){}, icon: Image.asset("assets/images/edit-2.png")),
+                IconButton(onPressed: (){}, icon: Image.asset("assets/images/close-circle.png")),
+
+              ],
+            ),
+          ),
+        ),
+     Expanded(
+            child: SizedBox(
+              height: 1.5 * height,
+              child: ListView.separated(
+                shrinkWrap: true,
+                separatorBuilder: (context, index) => SizedBox(height: height* 0.02,),
+                itemCount: ProfileCubit.get(context).portofolioList!.length,
+                itemBuilder: (context , index){
+                  return BuilderPortfolio(
+                    item: ProfileCubit.get(context).portofolioList![index],
+                  );
+                  //return BuilderPortfolio();
+                },
+
+              ),
+            ),
+          ),
+
+
+
+
+      ],
+    );
   },
 ),
-            
-          ],
-        ),
-      ),
     );
   }
 } // end of statlessWidget

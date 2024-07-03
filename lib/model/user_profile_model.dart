@@ -199,8 +199,6 @@
 // }
 
 
-
-///
 class UserProfileModel {
   bool? status;
   Data? data;

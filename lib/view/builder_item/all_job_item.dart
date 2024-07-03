@@ -38,7 +38,7 @@ class _BuilderAllJobsState extends State<BuilderAllJobs> {
                     Image.network("${widget.item.image}", height: 0.1 * width, width:0.1 * width,),
                     SizedBox(width: 0.1 * width),
                     SizedBox(
-                      width: 0.5 * width,
+                      width: 0.4 * width,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
