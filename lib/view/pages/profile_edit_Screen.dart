@@ -236,11 +236,11 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                     onPressed: () async {
                       setState(()async {
                         userImage = await ProfileCubit.get(context).uploadImage("cam");
-                        // if (userImage != null)
-                        //   {
-                        //     Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
-                        //   }
-                        // else{}
+                        if (userImage != null)
+                          {
+                            Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
+                          }
+                        else{}
                       });
 
                     },
@@ -271,6 +271,13 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                     onPressed: () async {
                       setState(() async{
                         userImage= await ProfileCubit.get(context).uploadImage("gallery");
+                        if (userImage != null)
+                        {
+                          Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
+                        }
+                        else{
+
+                        }
                       });
                       },
                     child: const Row(
