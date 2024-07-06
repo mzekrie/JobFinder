@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 import '../widget/default_text_field.dart';
 
-class FavJobsOptions extends StatelessWidget {
+class FavJobsOptions extends StatefulWidget {
   const FavJobsOptions({super.key});
+
+  @override
+  State<FavJobsOptions> createState() => _FavJobsOptionsState();
+}
+
+class _FavJobsOptionsState extends State<FavJobsOptions> {
+  void _OpenSocialShare() {
+    showModalBottomSheet(context: context, builder: (ctx) => buttomSheetSocial());
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -43,7 +54,11 @@ class FavJobsOptions extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                      Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.applyToJobScreen, (route) => false);
+
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -75,7 +90,10 @@ class FavJobsOptions extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                       _OpenSocialShare();
+
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -107,7 +125,20 @@ class FavJobsOptions extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                      Fluttertoast.showToast(
+                        msg: " Job is removed from saved Jobs List!",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 3,
+                        backgroundColor: Colors.green,
+                        textColor: Colors.white,
+                        fontSize: 16.0,
+                      );
+                      Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.savedJobsScreen, (route) => false);
+
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -143,6 +174,108 @@ class FavJobsOptions extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget buttomSheetSocial() {
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: SizedBox(
+        width: double.infinity,
+        height: 150,
+        child: Column(
+          children: [
+            const DefaultText(
+              text: "Share Via ",
+              color: AppTheme.grayGP,
+              fontSize: 20,
+              fontWeight: FontWeight.normal,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: OutlinedButton(
+                    onPressed: () async {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          AppRoute.savedJobsScreen, (route) => false);
+
+                      Fluttertoast.showToast(
+                        msg: " Job is shared successfully!",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 3,
+                        backgroundColor: Colors.green,
+                        textColor: Colors.white,
+                        fontSize: 16.0,
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(Icons.facebook, color:AppTheme.blueButtonGP),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        SizedBox(
+                          width: 80,
+                          child: DefaultText(
+                            text: "Facebook",
+                            color: AppTheme.grayGP,
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: OutlinedButton(
+                    onPressed: () async {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                          AppRoute.savedJobsScreen, (route) => false);
+
+                      Fluttertoast.showToast(
+                        msg: " Job is shared successfully!",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 3,
+                        backgroundColor: Colors.green,
+                        textColor: Colors.white,
+                        fontSize: 16.0,
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.email, color:AppTheme.blueButtonGP),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        SizedBox(
+                          width: 80,
+                          child: DefaultText(
+                            text: "email",
+                            color: AppTheme.grayGP,
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

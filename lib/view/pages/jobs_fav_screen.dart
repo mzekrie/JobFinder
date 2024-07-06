@@ -1,8 +1,4 @@
-
-/// code using API but it gives error
 library;
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gp_amit60_mary_zekrie/control/cubit/fav_job/fav_jobs_cubit.dart';
@@ -25,7 +21,7 @@ class _SavedJobsScreenState extends State<SavedJobsScreen> {
           appBar: AppBar(
             leading: IconButton(
                 onPressed: () {
-                  Navigator.of(context).popAndPushNamed(AppRoute.homeScreen);
+                  Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.homeScreen, (route) => false);
                 },
                 icon: Image.asset(
                   "assets/images/arrow-left.png",
