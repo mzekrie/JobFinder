@@ -162,7 +162,7 @@ class CustomSearch extends SearchDelegate {
             padding: EdgeInsets.all(8.0),
             child: DefaultText(
               text: ("    Result: Featuring 120+ jobs"),
-              color: AppTheme.grayGP,
+              color: AppTheme.whiteGP,
               fontSize: 15,
               fontWeight: FontWeight.normal,
             ),
@@ -229,7 +229,7 @@ class CustomSearch extends SearchDelegate {
               padding: EdgeInsets.all(8.0),
               child: DefaultText(
                 text: ("  Recent searches"),
-                color: AppTheme.grayGP,
+                color: AppTheme.whiteGP,
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
               ),
@@ -276,7 +276,7 @@ class CustomSearch extends SearchDelegate {
               padding: EdgeInsets.all(8.0),
               child: DefaultText(
                 text: ("  Popular searches"),
-                color: AppTheme.grayGP,
+                color: AppTheme.whiteGP,
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
               ),

@@ -82,7 +82,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 fontSize: 20,
                 fontWeight: FontWeight.normal,
               ),
-
               const  DefaultText(
                 text: "Senior UI/UX Designer",
                 color: AppTheme.grayGP,
@@ -92,7 +91,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: height * 0.02,
               ),
-
               /// KPI count
               Container(
                 height: height * 0.08,
