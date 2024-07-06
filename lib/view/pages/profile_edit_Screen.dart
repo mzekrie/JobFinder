@@ -22,7 +22,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   void _OpenCameraGallery() {
     showModalBottomSheet(context: context, builder: (ctx) => buttomSheet());
   }
-  XFile? userImage;
+
 
   @override
   Widget build(BuildContext context) {
@@ -236,6 +236,11 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                     onPressed: () async {
                       setState(()async {
                         userImage = await ProfileCubit.get(context).uploadImage("cam");
+                        // if (userImage != null)
+                        //   {
+                        //     Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
+                        //   }
+                        // else{}
                       });
 
                     },
@@ -264,8 +269,10 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
                     onPressed: () async {
-                      userImage= await ProfileCubit.get(context).uploadImage("gallery");
-                    },
+                      setState(() async{
+                        userImage= await ProfileCubit.get(context).uploadImage("gallery");
+                      });
+                      },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [

@@ -1,5 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 // Chat List
 List chat = ["Hi Rafif!, I'm Melan the selection team from Twitter. Thank you for applying for a job at our company. We have announced that you are eligible for the interview stage", "Hi Melan, thank you for considering me, this is good news for me." ];
@@ -28,7 +29,7 @@ var formKeyApplyJob2 = GlobalKey<FormState>();
 /// list to store data from local database to it
 List<Map> allJobs = [] ;
 List<Map> favJobs = [] ;
-
+XFile? userImage;
 bool showAppliedMessage = false;
 bool showAcceptedMessage = false;
 
