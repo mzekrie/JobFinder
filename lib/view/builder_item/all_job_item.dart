@@ -106,6 +106,7 @@ class _BuilderAllJobsState extends State<BuilderAllJobs> {
                       ),
                     ),
 
+
                     DefaultText(
                       text: (" ${widget.item.salary} "),
                       color: Colors.green,
