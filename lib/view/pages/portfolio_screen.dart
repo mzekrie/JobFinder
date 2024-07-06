@@ -288,7 +288,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
                     onPressed: () async {
-                      setState(()async {
+                      setState(() async {
                         userCV = await ProfileCubit.get(context).uploadImage("cam");
                         if (userCV != null)
                         {
@@ -324,8 +324,8 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
                     onPressed: () async {
-                      setState(() async{
-                        userCV= await ProfileCubit.get(context).uploadImage("gallery");
+                      setState(() async {
+                        userCV=  await ProfileCubit.get(context).uploadImage("gallery");
                         if (userCV != null)
                         {
                           Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.portfolioScreen, (route) => false);
@@ -362,8 +362,11 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
         ),
       ),
     );
+
   }
   Widget imagebuttomSheet() {
+    return BlocBuilder<ProfileCubit, ProfileState>(
+  builder: (context, state) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: SizedBox(
@@ -386,7 +389,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
                     onPressed: () async {
-                      setState(()async {
+                      setState(() async{
                         userCVImage = await ProfileCubit.get(context).uploadImage("cam");
                         if (userCVImage != null)
                         {
@@ -422,7 +425,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
                     onPressed: () async {
-                      setState(() async{
+                      setState(()async {
                         userCVImage= await ProfileCubit.get(context).uploadImage("gallery");
                         if (userCVImage != null)
                         {
@@ -460,6 +463,8 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
         ),
       ),
     );
+  },
+);
   }
 } // end of statlessWidget
 

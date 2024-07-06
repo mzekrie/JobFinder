@@ -72,8 +72,8 @@ class ProfileCubit extends Cubit<ProfileState> {
         "image": image,
       });
       emit(CapturePhotoState());
-      return image;
-      //return userImage?.readAsBytes();
+     return image;
+     // return userImage?.readAsBytes();
     }
     else
     {
@@ -86,11 +86,12 @@ class ProfileCubit extends Cubit<ProfileState> {
       });
       emit(UploadPhotoState());
       return image;
-      //return userImage?.readAsBytes();
+     // return userImage?.readAsBytes();
     }
   }
 
-/// add portfolio CV and image
+
+  /// add portfolio CV and image
   /// i have to path to it the uploaded file and name of the file
 
 
