@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:gp_amit60_mary_zekrie/control/cubit/auth/login_cubit.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/cache_helper.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/enum.dart';
 import '../../model/shared/colors_theme.dart';
@@ -19,6 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     @override
    void initState() {
   //   // TODO: implement initState
+      //LoginCubit.get(context).getUser();
      super.initState();
   //   ProfileCubit.get(context).getProfileDataAll();
    }
@@ -75,11 +77,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             "assets/images/Profile.png",) : FileImage (File(userImage!.path)),
                       ),
 
-                      // child: CircleAvatar(
-                      //   minRadius:20,
-                      //     child: Image.asset("assets/images/Profile.png", width: 80,height: 80,),
-                      //
-                      // ),
                     ),
                   ],
                 ),

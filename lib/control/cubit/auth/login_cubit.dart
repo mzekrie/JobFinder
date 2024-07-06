@@ -95,11 +95,11 @@ class LoginCubit extends Cubit<LoginState> {
       print (" this is the name $name");
       var response = await DioHelper.postData(token: token_mary,
           url: endpoint_update_name_password,
-          data: {"name": "name",});
+          data: {"name": name,});
 
 
       if (response.statusCode == 200) {
-        print("Updated name or password with message ${response.statusMessage}");
+        print("Updated name with message ${response.statusMessage}");
         emit(UpdateNamePasswordSuccessState());
         return ('SucessUpdate200');
       }
@@ -120,7 +120,6 @@ class LoginCubit extends Cubit<LoginState> {
       return ('error');
     }
   }
-
   /// to get the id , name,  and email  only and set it to the cache
   getUser() async {
     emit(LoadingGetUserInfoState());
@@ -128,22 +127,24 @@ class LoginCubit extends Cubit<LoginState> {
     try{
       var response = await DioHelper.getData(url: endpoint_get_profile, token: token_mary);
       if (response.statusCode == 200) {
-        userModel.name = response.data['name'];
-        userModel.id = response.data['id'];// Set NULL
-        userModel.email = response.data['email']; // set NULL
+        //userModel = UserModel.fromJson(response.data);
+
+        // userModel.name = response.data['name'];// Set NULL
+        // userModel.id = response.data['id'];// Set NULL
+        // userModel.email = response.data['email']; // set NULL
         await CacheHelper.putString(key: SharedKeys.name,value: userModel.name.toString(),);
-        //await CacheHelper.putInt(key: SharedKeys.userID,value:userModel.id!);
         await CacheHelper.putString(key: SharedKeys.userID,value:userModel.id.toString(),);
-        //await CacheHelper.putString(key: SharedKeys.email,value:userModel.email.toString(),);
-       // userID_const =CacheHelper.getInt(key: SharedKeys.userID);
+        await CacheHelper.putString(key: SharedKeys.email,value:userModel.email.toString(),);
+        //await CacheHelper.putInt(key: SharedKeys.userID,value:userModel.id!);
+        //userID_const =CacheHelper.getInt(key: SharedKeys.userID);
         userID_const = CacheHelper.getString(key: SharedKeys.userID);
         userName_const =  CacheHelper.getString(key: SharedKeys.name);
-        //userEmail_const = CacheHelper.getString(key: SharedKeys.email);
+        userEmail_const = CacheHelper.getString(key: SharedKeys.email);
 
         print ('Sucess Getting User profile 200');
         print ('userName_const of user is $userName_const');
         print ('userID_const of user is $userID_const');
-        //print ('userEmail_const of user is $userEmail_const');
+        print ('userEmail_const of user is $userEmail_const');
         emit(SucessGetUserInfoState());
         return ('Sucess');
       }
