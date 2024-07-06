@@ -20,7 +20,7 @@ class PortfolioScreen extends StatefulWidget {
 class _PortfolioScreenState extends State<PortfolioScreen> {
 
   void _uploadCV() {
-    showModalBottomSheet(context: context, builder: (ctx) => buttomSheet2());
+    showModalBottomSheet(context: context, builder: (ctx) => fileCVButtomSheet());
   }
   void _takeUserImage() {
     showModalBottomSheet(context: context, builder: (ctx) => imagebuttomSheet());
@@ -265,7 +265,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
     );
   }
 
-  Widget buttomSheet2() {
+  Widget fileCVButtomSheet() {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: SizedBox(
@@ -293,6 +293,9 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                         if (userCV != null)
                         {
                           Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.portfolioScreen, (route) => false);
+                        }
+                        else {
+                          print ('Still uploding userCV');
                         }
                       });
                     },
@@ -326,6 +329,9 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                         if (userCV != null)
                         {
                           Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.portfolioScreen, (route) => false);
+                        }
+                        else {
+                          print ('Still uploding userCV');
                         }
 
                       });
@@ -386,6 +392,9 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                         {
                           Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.portfolioScreen, (route) => false);
                         }
+                        else {
+                          print ('Still uploding user profile image');
+                        }
                       });
                     },
                     child: const Row(
@@ -418,6 +427,9 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                         if (userCVImage != null)
                         {
                           Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.portfolioScreen, (route) => false);
+                        }
+                        else {
+                          print ('Still uploding user profile image');
                         }
 
                       });
