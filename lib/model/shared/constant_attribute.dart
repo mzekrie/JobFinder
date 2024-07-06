@@ -75,9 +75,9 @@ TextEditingController otp6Controller = TextEditingController();
 
 
 ////////////// token /////////////////
-var token_mary = "11436|nrfeMpeoKQQzx5uLHC2cMSwm5e9MsazPpSiGnWpF"; // koko1
+//var token_mary = "11436|nrfeMpeoKQQzx5uLHC2cMSwm5e9MsazPpSiGnWpF"; // koko1
 //var token_mary ="11401|pENJ0cHlzInPRJsUw0ZmR97a2LaqEWujgy3ZfwfE";
-//var token_mary ="not updated";
+var token_mary ="not updated";
 //var token_ali = "2689|uERlFfnpNd7kwK9x2IvpN6Cf9HDU7QK6weBjeY8i";
 
 ///////////user profile ////////////
@@ -109,12 +109,8 @@ const String  endpoint_add_portofolio ="/user/profile/portofolios";
 const String  endpoint_delete_portofolio ="/user/profile/portofolios/2";
 const String  endpoint_edit_profile ="/user/profile/edit";
 
-
 ////////// Favourite Job API URL//////////
-
 const String  endpoint_show_fav_jobs ="/favorites";
-
 ///////// Notification API///////////////
-
 
 const String endpoint_show_notification ="/notification/1";
