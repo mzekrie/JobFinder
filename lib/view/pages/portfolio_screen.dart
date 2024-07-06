@@ -200,7 +200,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        DefaultText(
+                        const DefaultText(
                           text: ("UX Design "),
                           //text: ("${widget.item.name}"),
                           color: AppTheme.blackGP,
@@ -208,7 +208,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                         SizedBox(height: 0.01 * height),
-                        DefaultText(
+                        const DefaultText(
                           text: ("CV.pdf 300KB"),
                           //text: ("${widget.item.name}"),
                           color: AppTheme.gray,

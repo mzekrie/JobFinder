@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/constant_attribute.dart';
+import '../../control/cubit/applied_job/applied_job_cubit.dart';
 import '../../control/cubit/auth/login_cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
@@ -496,6 +497,10 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
 
               ///TODO
               /// send data to server
+              // AppliedJobCubit.get(context).applyToJob(
+              //     name: nameController.text,
+              //     email:emailController.text, mobile: "${myCountry.dialCode}${handPhoneController.text}", workType:_workType, cvFile:fileToDisplay_cv, cvFileName: _fileName_cv, otherFile:fileToDisplay_other, otherFileName:_fileName_other);
+
             } else {
               setState(() {
                 currentStep = currentStep + 1;

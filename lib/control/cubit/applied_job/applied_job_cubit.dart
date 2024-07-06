@@ -41,20 +41,19 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
   }
 
 
-  Future applyToJob(String? name,
+  applyToJob(String? name,
       String? email,
       String? mobile,
       String? workType,
       File? cvFile,
       String? cvFileName,
       File? otherFile,
-      String? otherFileName,) async {
+      String? otherFileName) async {
     emit(LoadingApplyFormState());
 
     try {
       String appliedJobID = CacheHelper.getString(
           key: SharedKeys.appliedJobID);
-      //String _userID = await CacheHelper.getString(key: SharedKeys.userID)
 
       if (cvFile != null) {
         FormData formDataCV = FormData.fromMap({
@@ -65,23 +64,23 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
 
         if (otherFile != null) {
           FormData formDataFile = FormData.fromMap({
-            'userFile': await MultipartFile.fromFile(
+            'otherFile': await MultipartFile.fromFile(
                 otherFile.path, filename: otherFileName),
           });}
 
-      Response response = await DioHelper.postData(
+      var response = await DioHelper.postData(
           url: endpoint_applyToJob,
           token: token_mary,
           query: {},
           data: {
             "jobs_id": appliedJobID,
-            "user_id": userID_const, // const until we get it from sharedKeys
-            "name": "name",
-            "email": "email",
-            "mobile": "mobile",
-            "work_type": "work_type",
+            "user_id": userID_const, // sharedKeys return null setting is null
+            "name": name,
+            "email": email,
+            "mobile": mobile,
+            "work_type": workType,
             "cv_file": "formDataCV",
-            "other_file": "formDataFile"
+            "other_file": "formDataFile" /// need to assign it
           });
       if (response.statusCode == 200) {
         print(response.statusMessage);
