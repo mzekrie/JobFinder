@@ -103,6 +103,25 @@
 //     )
 //   ],
 // ),
+
+///
+///  getProfileDataAll() async {
+//     emit(LoadingProfileDataState());
+//     var response = await DioHelper.getData(url: endpoint_get_portofolio,token: token_mary).then((value) {
+//       // converting data from json and map it to the model and then add it to a list
+//       userProfileModel = UserProfileModel.fromJson(value.data["profile"]);
+//       print(userProfileModel);
+//       profileList!.add(userProfileModel.data as Profile);
+//       print ("----profile list");
+//       print (profileList);
+//       //print(value);
+//       emit(SuccessLoadingProfileDataState());
+//     }).catchError((error) {
+//       // catching any error coming from API
+//       print(error);
+//       emit(ErrorLoadingProfileDataState());
+//     });
+//   }
 /// customize container
 //https://stackoverflow.com/questions/57777737/flutter-give-container-rounded-border
 /// routing

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../control/cubit/profile/profile__cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../model/shared/constant_attribute.dart';
@@ -21,12 +22,12 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   void _OpenCameraGallery() {
     showModalBottomSheet(context: context, builder: (ctx) => buttomSheet());
   }
-  File? userImage;
+  XFile? userImage;
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    //double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -233,7 +234,10 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                   padding: const EdgeInsets.all(4.0),
                   child: OutlinedButton(
                     onPressed: () async {
-                      userImage = await ProfileCubit.get(context).uploadImage("cam");
+                      setState(()async {
+                        userImage = await ProfileCubit.get(context).uploadImage("cam");
+                      });
+
                     },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,

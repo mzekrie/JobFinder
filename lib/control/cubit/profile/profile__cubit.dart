@@ -17,9 +17,9 @@ class ProfileCubit extends Cubit<ProfileState> {
   UserProfileModel userPortfolioModel = UserProfileModel();
 
 /// image picker attributes
-final ImagePicker picker = ImagePicker();
-late File image;
-  File? userImage; // will hold the image
+ final ImagePicker picker = ImagePicker();
+ late XFile? image;
+ late XFile? userImage; // will hold the image
   /// 3) create empty list of the same class model datatype to save the data on it
 
   List<Profile>? profileList;
@@ -64,8 +64,8 @@ late File image;
   uploadImage(String camera)async{
 
     if(camera == "cam"){
-      userImage = (await picker.pickImage(source: ImageSource.camera))! as File?;
-      image = File(userImage!.path);
+      userImage = (await picker.pickImage(source: ImageSource.camera))! as XFile?;
+      image = XFile(userImage!.path);
 
       // call API to set image
       await DioHelper.postData(url: endpoint_add_portofolio,token: token_mary, data: {
@@ -77,8 +77,8 @@ late File image;
     }
     else
     {
-      userImage = (await picker.pickImage(source: ImageSource.gallery))! as File?;
-      image = File(userImage!.path);
+      userImage = (await picker.pickImage(source: ImageSource.gallery))! as XFile?;
+      image = XFile(userImage!.path);
 
       // call API to set image
       await DioHelper.postData(url: endpoint_add_portofolio,token: token_mary, data: {
