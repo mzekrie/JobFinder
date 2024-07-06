@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/cache_helper.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/enum.dart';
 import '../../model/shared/colors_theme.dart';
+import '../../model/shared/constant_attribute.dart';
 import '../../router/router.dart';
 import '../widget/default_text_field.dart';
 
@@ -66,11 +69,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "assets/images/profile_bluw.png",
                     ),
                     Center(
-                      child: CircleAvatar(
-                        minRadius:20,
-                          child: Image.asset("assets/images/Profile.png", width: 80,height: 80,),
-
+                      child:  CircleAvatar(
+                        minRadius: 60,
+                        backgroundImage: userImage == null? const AssetImage(
+                            "assets/images/Profile.png",) : FileImage (File(userImage!.path)),
                       ),
+
+                      // child: CircleAvatar(
+                      //   minRadius:20,
+                      //     child: Image.asset("assets/images/Profile.png", width: 80,height: 80,),
+                      //
+                      // ),
                     ),
                   ],
                 ),
