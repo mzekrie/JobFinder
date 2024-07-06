@@ -52,7 +52,7 @@ class ProfileCubit extends Cubit<ProfileState> {
           url: endpoint_get_portofolio, token: token_mary);
       // converting data from json and map it to the model and then add it to a list
       userPortfolioModel = UserProfileModel.fromJson(response.data["portofolio"]);
-      portofolioList!.add(userPortfolioModel.data as Portofolio);
+      portofolioList.add(userPortfolioModel.data as Portofolio);
       print(response.data!["portofolio"]);
       emit(SuccessLoadingPortfolioDataState());
     }
