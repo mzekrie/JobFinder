@@ -97,7 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 height: height * 0.08,
                 width: width * 0.8,
-                color: AppTheme.grayLightGP,
+                color: AppTheme.profile_baby_blue,
                 child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
