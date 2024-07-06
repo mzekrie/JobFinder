@@ -456,6 +456,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
   super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
