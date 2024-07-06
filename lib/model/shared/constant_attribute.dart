@@ -23,9 +23,13 @@ var formKeyProfile = GlobalKey<FormState>();
 var formKeyEducation = GlobalKey<FormState>();
 var formKeyExperience = GlobalKey<FormState>();
 var formKeyPortfolio = GlobalKey<FormState>();
+var formKeyApplyJob1 = GlobalKey<FormState>();
+var formKeyApplyJob2 = GlobalKey<FormState>();
 /// list to store data from local database to it
 List<Map> allJobs = [] ;
 List<Map> favJobs = [] ;
+
+bool showAppliedMessage = false;
 
 /// user Auth
 //TextEditingController emailController = TextEditingController(text: CacheHelper.getString(key: SharedKeys.email));

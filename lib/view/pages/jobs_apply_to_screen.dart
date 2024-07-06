@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/constant_attribute.dart';
 import '../../control/cubit/applied_job/applied_job_cubit.dart';
 import '../../control/cubit/auth/login_cubit.dart';
@@ -123,233 +124,239 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
       state: currentStep > 0 ? StepState.complete:StepState.indexed,
       isActive: currentStep >= 0,
       title: const Text('Bio'),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const DefaultText(
-            text: "Biodata",
-            color: AppTheme.blackGP,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
-          const DefaultText(
-            text: "Fill in your bio data correctly",
-            color: AppTheme.grayGP,
-            fontSize: 12,
-            fontWeight: FontWeight.normal,
-          ),
-          const SizedBox(height: 10),
-          const DefaultText(
-            text: "Full Name*",
-            color: AppTheme.blackGP,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
-          const SizedBox(height: 10),
-          DefaultFormField(
-              radius: 10,
-              backgroundColor: AppTheme.whiteGP,
-              controller: nameController,
-              keyboardType: TextInputType.text,
-              labelText: "name",
+      content: Form(
+        key: formKeyApplyJob1,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const DefaultText(
+              text: "Biodata",
+              color: AppTheme.blackGP,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+            const DefaultText(
+              text: "Fill in your bio data correctly",
+              color: AppTheme.grayGP,
+              fontSize: 12,
+              fontWeight: FontWeight.normal,
+            ),
+            const SizedBox(height: 10),
+            const DefaultText(
+              text: "Full Name*",
+              color: AppTheme.blackGP,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+            const SizedBox(height: 10),
+            DefaultFormField(
+                radius: 10,
+                backgroundColor: AppTheme.whiteGP,
+                controller: nameController,
+                keyboardType: TextInputType.text,
+                labelText: "name",
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "name cannot be empty ";
+                  } else {
+                    return null;
+                  }
+                }),
+            const SizedBox(height:10),
+            const DefaultText(
+              text: "Email",
+              color: AppTheme.blackGP,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+            const SizedBox(height: 10),
+            DefaultFormField(
+                radius: 10,
+                prefixIcon: Image.asset(
+                    "assets/images/login_username.png"),
+                backgroundColor: AppTheme.whiteGP,
+                controller: emailController,
+                keyboardType: TextInputType.emailAddress,
+                labelText: "Username",
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "email cannot be empty";
+                  }
+                  if (!RegExp(
+                      "^[a-zA-Z0-9+_.-]+@[a-zA-Z-9+_.-]+.[a-z]")
+                      .hasMatch(value)) {
+                    return " Please enter valid email format";
+                  } else {
+                    return null;
+                  }
+                }),
+            const SizedBox(height: 10),
+            DefaultPhoneField(
+              controller: handPhoneController,
               validator: (value) {
                 if (value!.isEmpty) {
-                  return "name cannot be empty ";
-                } else {
-                  return null;
+                  return "phone number must not be empty ";
                 }
-              }),
-          const SizedBox(height:10),
-          const DefaultText(
-            text: "Email",
-            color: AppTheme.blackGP,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
-          const SizedBox(height: 10),
-          DefaultFormField(
-              radius: 10,
-              prefixIcon: Image.asset(
-                  "assets/images/login_username.png"),
-              backgroundColor: AppTheme.whiteGP,
-              controller: emailController,
-              keyboardType: TextInputType.emailAddress,
-              labelText: "Username",
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return "email cannot be empty";
-                }
-                if (!RegExp(
-                    "^[a-zA-Z0-9+_.-]+@[a-zA-Z-9+_.-]+.[a-z]")
-                    .hasMatch(value)) {
-                  return " Please enter valid email format";
-                } else {
-                  return null;
-                }
-              }),
-          const SizedBox(height: 10),
-          DefaultPhoneField(
-            controller: handPhoneController,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "phone number must not be empty ";
-              }
-              return null;
-            },
-            labelText: "Phone Number",
-            onChange: (countryCode) {
-              myCountry = countryCode;
-            },
-            hintText: "Contact Phone Number",
-          ),
-        ],
+                return null;
+              },
+              labelText: "Phone Number",
+              onChange: (countryCode) {
+                myCountry = countryCode;
+              },
+              hintText: "Contact Phone Number",
+            ),
+          ],
+        ),
       ),
-    ),
+    ), //step1
     Step(
       state: currentStep > 1 ? StepState.complete:StepState.indexed,
       isActive: currentStep >= 1,
       title: const Text('Work Type '),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const DefaultText(
-            text: "Type of work",
-            color: AppTheme.blackGP,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-          ),
-          const DefaultText(
-            text: "Fill in your bio data correctly",
-            color: AppTheme.grayGP,
-            fontSize: 12,
-            fontWeight: FontWeight.normal,
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child:  ListView(
-                shrinkWrap: true,
-                children: [
-                  RadioListTile(
-                    value: "Senior UX Designer",
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    tileColor: AppTheme.whiteGP,
-                    selectedTileColor:AppTheme.blueButtonGP ,
-                    activeColor: AppTheme.blueButtonGP,
-                    hoverColor:AppTheme.grayLightGP,
-                    title: const Row(
-                      children: <Widget>[
-                        Expanded(
-                          flex: 3,
-                          child: Text(
-                            "Senior UX Designer",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
-                            style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+      content: Form(
+        key: formKeyApplyJob2,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const DefaultText(
+              text: "Type of work",
+              color: AppTheme.blackGP,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+            const DefaultText(
+              text: "Fill in your bio data correctly",
+              color: AppTheme.grayGP,
+              fontSize: 12,
+              fontWeight: FontWeight.normal,
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child:  ListView(
+                  shrinkWrap: true,
+                  children: [
+                    RadioListTile(
+                      value: "Senior UX Designer",
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      tileColor: AppTheme.whiteGP,
+                      selectedTileColor:AppTheme.blueButtonGP ,
+                      activeColor: AppTheme.blueButtonGP,
+                      hoverColor:AppTheme.grayLightGP,
+                      title: const Row(
+                        children: <Widget>[
+                          Expanded(
+                            flex: 3,
+                            child: Text(
+                              "Senior UX Designer",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 3,
+                              style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                            ),
                           ),
-                        ),
 
-                      ],
+                        ],
+                      ),
+                      groupValue: _workType,
+                      onChanged: (val) => setState(() {
+                        _workType = val!;
+                      }),
                     ),
-                    groupValue: _workType,
-                    onChanged: (val) => setState(() {
-                      _workType = val!;
-                    }),
-                  ),
-                  const Divider(thickness:1, color: AppTheme.gray,),
-                  RadioListTile(
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    tileColor: AppTheme.whiteGP,
-                    selectedTileColor:AppTheme.blueButtonGP ,
-                    activeColor: AppTheme.blueButtonGP,
-                    hoverColor:AppTheme.grayLightGP,
-                    value:"Senior UI Designer",
-                    title: const Row(
-                      children: <Widget>[
+                    const Divider(thickness:1, color: AppTheme.gray,),
+                    RadioListTile(
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      tileColor: AppTheme.whiteGP,
+                      selectedTileColor:AppTheme.blueButtonGP ,
+                      activeColor: AppTheme.blueButtonGP,
+                      hoverColor:AppTheme.grayLightGP,
+                      value:"Senior UI Designer",
+                      title: const Row(
+                        children: <Widget>[
 
-                        Expanded(
-                          flex: 3,
-                          child: Text(
-                            "Senior UI Designer",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
-                            style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                          Expanded(
+                            flex: 3,
+                            child: Text(
+                              "Senior UI Designer",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 3,
+                              style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                            ),
                           ),
-                        ),
 
-                      ],
+                        ],
+                      ),
+                      groupValue: _workType,
+                      onChanged: (val) => setState(() {
+                        _workType = val!;
+                      }),
                     ),
-                    groupValue: _workType,
-                    onChanged: (val) => setState(() {
-                      _workType = val!;
-                    }),
-                  ),
-                  const Divider(thickness:1, color: AppTheme.gray,),
-                  RadioListTile(
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    tileColor: AppTheme.whiteGP,
-                    selectedTileColor:AppTheme.blueButtonGP ,
-                    activeColor: AppTheme.blueButtonGP,
-                    hoverColor:AppTheme.grayLightGP,
-                    value: "Graphik Designer",
-                    title: const Row(
-                      children: <Widget>[
+                    const Divider(thickness:1, color: AppTheme.gray,),
+                    RadioListTile(
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      tileColor: AppTheme.whiteGP,
+                      selectedTileColor:AppTheme.blueButtonGP ,
+                      activeColor: AppTheme.blueButtonGP,
+                      hoverColor:AppTheme.grayLightGP,
+                      value: "Graphik Designer",
+                      title: const Row(
+                        children: <Widget>[
 
-                        Expanded(
-                          flex: 3,
-                          child: Text(
-                            "Graphik Designer",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
-                            style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                          Expanded(
+                            flex: 3,
+                            child: Text(
+                              "Graphik Designer",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 3,
+                              style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                            ),
                           ),
-                        ),
 
-                      ],
+                        ],
+                      ),
+                      groupValue: _workType,
+                      onChanged: (val) => setState(() {
+                        _workType = val!;
+                      }),
                     ),
-                    groupValue: _workType,
-                    onChanged: (val) => setState(() {
-                      _workType = val!;
-                    }),
-                  ),
-                  const Divider(thickness:1, color: AppTheme.gray,),
-                  RadioListTile(
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    tileColor: AppTheme.whiteGP,
-                    selectedTileColor:AppTheme.blueButtonGP ,
-                    activeColor: AppTheme.blueButtonGP,
-                    hoverColor:AppTheme.grayLightGP,
-                    value: "Front-End Developer",
-                    title: const Row(
-                      children: <Widget>[
-                        Expanded(
-                          flex: 3,
-                          child: Text(
-                            "Front-End Developer",
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
-                            style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                    const Divider(thickness:1, color: AppTheme.gray,),
+                    RadioListTile(
+                      controlAffinity: ListTileControlAffinity.trailing,
+                      tileColor: AppTheme.whiteGP,
+                      selectedTileColor:AppTheme.blueButtonGP ,
+                      activeColor: AppTheme.blueButtonGP,
+                      hoverColor:AppTheme.grayLightGP,
+                      value: "Front-End Developer",
+                      title: const Row(
+                        children: <Widget>[
+                          Expanded(
+                            flex: 3,
+                            child: Text(
+                              "Front-End Developer",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 3,
+                              style: TextStyle(color: AppTheme.blackGP, fontSize: 15.0),
+                            ),
                           ),
-                        ),
 
-                      ],
+                        ],
+                      ),
+                      groupValue: _workType,
+                      onChanged: (val) => setState(() {
+                        _workType = val!;
+                      }),
                     ),
-                    groupValue: _workType,
-                    onChanged: (val) => setState(() {
-                      _workType = val!;
-                    }),
-                  ),
-                  const Divider(thickness:1, color: AppTheme.gray,),
+                    const Divider(thickness:1, color: AppTheme.gray,),
 
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
+    ), //step2
     Step(
       state: currentStep > 2 ? StepState.complete:StepState.indexed,
       isActive: currentStep >= 2,
@@ -448,7 +455,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
           ),
         ],
       ),
-    ),
+    ),  //step3
   ];
 @override
   void initState() {
@@ -487,7 +494,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
           currentStep: currentStep,
           onStepTapped: (step) => setState(() => currentStep = step), // to move between steps by clicking on number
 
-          onStepContinue: () {
+          onStepContinue: () async {
             final isLastStep = currentStep == getSteps().length - 1;
             if (isLastStep) {
               setState(() {
@@ -497,14 +504,70 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
 
               ///TODO
               /// send data to server
-              // AppliedJobCubit.get(context).applyToJob(
-              //     name: nameController.text,
-              //     email:emailController.text, mobile: "${myCountry.dialCode}${handPhoneController.text}", workType:_workType, cvFile:fileToDisplay_cv, cvFileName: _fileName_cv, otherFile:fileToDisplay_other, otherFileName:_fileName_other);
 
-            } else {
+              if ((formKeyApplyJob1.currentState!.validate()) && (formKeyApplyJob2.currentState!.validate()) ) {
+
+                String? validate =await AppliedJobCubit.get(context).applyToJob(
+                      name: nameController.text,
+                      email:emailController.text, mobile: "${myCountry.dialCode}${handPhoneController.text}", workType:_workType, cvFile:fileToDisplay_cv, cvFileName: _fileName_cv, otherFile:fileToDisplay_other, otherFileName:_fileName_other);
+
+                if (validate != ('Error')) {
+
+
+                  showAppliedMessage = true;  // to display message container at the home page
+                  emailController.clear();
+                  nameController.clear();
+                  handPhoneController.clear();
+                  _workType = "Senior UX Designer";
+
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(
+                      AppRoute.homeScreen,
+                          (route) => false);
+
+                  Fluttertoast.showToast(
+                    msg: " Successfully applied to Job!",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 3,
+                    backgroundColor: Colors.green,
+                    textColor: Colors.white,
+                    fontSize: 16.0,
+                  );
+                }
+                else {
+                  showAppliedMessage = true;  // to display message container at the home page
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(
+                      AppRoute.homeScreen,
+                          (route) => false);
+
+                  Fluttertoast.showToast(
+                    msg: " Error  applied to Job!",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 3,
+                    backgroundColor: Colors.red,
+                    textColor: Colors.white,
+                    fontSize: 16.0,
+                  );
+                }
+              }
+              else {
+                Fluttertoast.showToast(
+                  msg: " Something went wrong please check your input!",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 3,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0,
+                );
+              }
+            }
+            else {
               setState(() {
                 currentStep = currentStep + 1;
-
                 /// go to next step
               });
             }

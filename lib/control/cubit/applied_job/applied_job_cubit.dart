@@ -41,14 +41,14 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
   }
 
 
-  applyToJob(String? name,
-      String? email,
-      String? mobile,
-      String? workType,
-      File? cvFile,
-      String? cvFileName,
-      File? otherFile,
-      String? otherFileName) async {
+  applyToJob({required String? name,
+    required String? email,
+    required String? mobile,
+    required String? workType,
+    required File? cvFile,
+    required String? cvFileName,
+    required File? otherFile,
+    required String? otherFileName}) async {
     emit(LoadingApplyFormState());
 
     try {
@@ -87,16 +87,19 @@ class AppliedJobCubit extends Cubit<AppliedJobState> {
         print("Applied to job successfully and message ${response
             .statusMessage}");
         emit(SuccessApplyToJobState());
+        return ('Sucess');
       } else {
         print(response.statusMessage);
         print("Applied to job FAILED and message ${response.statusMessage}");
         emit(ErrorApplyToJobState());
+        return ('Error');
       }
     }
 
     catch(error) {
       print(error.toString());
       emit(ErrorApplyToJobState());
+      return ('Error');
     }
   }
 }
