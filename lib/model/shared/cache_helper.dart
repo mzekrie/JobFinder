@@ -25,18 +25,18 @@ class CacheHelper{
     return preferences!.getBool(key.name) ?? false;
   }
 
-  putInt({required SharedKeys key , required int value})async {
+  static putInt({required SharedKeys key , required int value})async {
     await preferences!.setInt(key.name, value);
   }
-  int getInt({required SharedKeys key}){
+  static int getInt({required SharedKeys key}){
     return preferences!.getInt(key.name) ?? 0;
   }
 /// delete an item
-  deleteData({required key}){
+  static deleteData({required key}){
     preferences!.remove(key);
   }
   /// delete all cache
-  deleteCache(){
+  static deleteCache(){
     preferences!.clear();
   }
 

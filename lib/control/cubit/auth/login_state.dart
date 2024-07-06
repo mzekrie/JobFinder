@@ -13,6 +13,6 @@ class UpdateNamePasswordDataState extends LoginState{}
 class UpdateNamePasswordSuccessState extends LoginState{}
 class UpdateNamePasswordErrorState extends LoginState{}
 
-class LoadingNameEmailState extends LoginState{}
-class GetNameEmailSuccessState extends LoginState{}
-class GetNameEmailerrorState extends LoginState{}
+class LoadingGetUserInfoState extends LoginState{}
+class SucessGetUserInfoState extends LoginState{}
+class ErrorGetUserInfoState extends LoginState{}

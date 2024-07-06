@@ -2,7 +2,7 @@
 //https://www.youtube.com/watch?v=bDnwMXLDRpw
 //https://www.youtube.com/watch?v=scvfDdGXWic
 
-
+///W/WindowOnBackDispatcher( 6260): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
 // widget tutorials
 // //https://www.youtube.com/watch?v=M9J-JJOuyE0&t=1590s
 //https://www.youtube.com/watch?v=rUWhNQlJ61U

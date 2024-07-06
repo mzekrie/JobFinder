@@ -35,28 +35,21 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState()
   {
-    //getToken(); /// call token from SHP
     super.initState();
   }
-  // String? token;
-  // getToken()async {
-  //   /// call token from SHP
-  //   token = await CacheHelper.getString(key: SharedKeys.token!);
-  //}
+
     @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => LoginCubit()..getUser(),),
+        BlocProvider(create: (context) => LoginCubit()),
         BlocProvider(create: (context) => AppliedJobCubit()..getAppliedJobs(),),
         BlocProvider(create: (context) => AllJobsCubit()..getDataAll(),),
         BlocProvider(create: (context) => FavJobsCubit()..getFavJobs(),),
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => ProfileCubit()..getProfileDataAll() ..getPortfolioDataAll(),),
         BlocProvider(create: (context) => AppCubit()..createDatabase() ..insertToDatabase(title: "UX Designer", companyName: "Twitter", jobTimeType: "Fulltime", jobType: "Remotely", salary: "1500 USD", location: "KSA", favorites: "1")),
-        // BlocProvider(
-        //   create: (context) => ThemesCubit(),
-        // ),
+
       ],
 
         child: MaterialApp(

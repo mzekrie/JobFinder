@@ -1,13 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
-
-List<Map> tasks = [];
-
-
-//double height = MediaQuery.of(context).size.height;
-//double width = MediaQuery.of(context).size.width;
-
 // Chat List
 List chat = ["Hi Rafif!, I'm Melan the selection team from Twitter. Thank you for applying for a job at our company. We have announced that you are eligible for the interview stage", "Hi Melan, thank you for considering me, this is good news for me." ];
 TextEditingController text = TextEditingController();
@@ -74,15 +67,23 @@ TextEditingController otp4Controller = TextEditingController();
 TextEditingController otp5Controller = TextEditingController();
 TextEditingController otp6Controller = TextEditingController();
 
-///// Dio API URL//////////
-const String baseUrl ="https://project2.amit-learning.com/api";
 
+////////////// token /////////////////
 var token_mary = "11436|nrfeMpeoKQQzx5uLHC2cMSwm5e9MsazPpSiGnWpF"; // koko1
 //var token_mary ="11401|pENJ0cHlzInPRJsUw0ZmR97a2LaqEWujgy3ZfwfE";
 //var token_mary ="not updated";
-int userID_const =1857;
+//var token_ali = "2689|uERlFfnpNd7kwK9x2IvpN6Cf9HDU7QK6weBjeY8i";
 
-const String token_ali = "2689|uERlFfnpNd7kwK9x2IvpN6Cf9HDU7QK6weBjeY8i";
+///////////user profile ////////////
+late String userID_const ='1857';
+late String userName_const = "name of user";
+late String userEmail_const ="someemail@hm.com";
+
+
+///// Dio API URL//////////
+const String baseUrl ="https://project2.amit-learning.com/api";
+
+
 ////////// Jobs API URL//////////
 const String endpoint_allJobs= "/jobs";
 const String endpoint_filterJobs= "/jobs/filter";

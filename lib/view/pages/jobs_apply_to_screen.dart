@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_amit60_mary_zekrie/model/shared/constant_attribute.dart';
+import '../../control/cubit/auth/login_cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 import '../widget/default_button.dart';
@@ -448,6 +449,12 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
       ),
     ),
   ];
+@override
+  void initState() {
+    // TODO: implement initState
+  LoginCubit.get(context).getUser();
+  super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

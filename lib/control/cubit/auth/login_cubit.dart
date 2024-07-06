@@ -18,34 +18,19 @@ class LoginCubit extends Cubit<LoginState> {
   loginByEmailAndPassword({ String? email, String? password }) async {
     emit(LoginByEmailAndPasswordState());
     try {
-      var response =
-      await DioHelper.postData(
+      var response = await DioHelper.postData(
           url: endpoint_login,
           data: {"email": email,
             "password": password});
 
-      // await CacheHelper.putString(key: SharedKeys.name,value: userModel.name.toString(),);
-      // nameUserConst =  await CacheHelper.getString(key: SharedKeys.name);
-      // await CacheHelper.putString(key: SharedKeys.userID,value:userModel.id.toString(),);
-      // idUserConst  =  await CacheHelper.getString(key: SharedKeys.userID);
-
       if (response.statusCode == 200) {
         userModel.token = response.data['token'];
-        // userModel.id = response.data['id'];// Set NULL
-        // userModel.name = response.data['name']; // set NULL
         await CacheHelper.putString(
           key: SharedKeys.token, value: userModel.token.toString(),);
         token_mary = CacheHelper.getString(key: SharedKeys.token);
 
-        await CacheHelper.putString(
-          key: SharedKeys.name, value: userModel.name.toString(),);
-
-        String nameUserConst = CacheHelper.getString(key: SharedKeys.name);
-
         print("login successfully, response of login data ");
         print(" string TOKEN is  $token_mary post data success");
-        print (" string NAME  is  $nameUserConst post data success");
-        // print (" string USER ID is  ${idUserConst} post data success");
         print(" Status code is  ${response.statusMessage} ");
         emit(LoginSuccessState());
         return ('SucessLogin200');
@@ -78,11 +63,7 @@ class LoginCubit extends Cubit<LoginState> {
       print (" this is the password $password");
       var response = await DioHelper.postData(token: token_mary,
           url: endpoint_update_name_password,
-          data: {//"name": name,
-            "password": password});
-
-      // userModel.name = name;
-      // userModel.password = password;
+          data: {"password": password});
 
       if (response.statusCode == 200) {
         print("Updated name or password with message ${response.statusMessage}");
@@ -141,24 +122,44 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
-  /// to get the id , name,  and email  only
+  /// to get the id , name,  and email  only and set it to the cache
   getUser() async {
-    emit(LoadingNameEmailState());
+    emit(LoadingGetUserInfoState());
 
-    await DioHelper.getData(url: endpoint_get_profile, token: token_mary).then((
-        value) {
-      // converting data from json and map it to the model and then add it to a list
-      userModel = UserModel.fromJson(value.data);
-      print(value);
-      String name  = userModel.name!;
-      print ('name of user is $name');
-      emit(GetNameEmailSuccessState());
-      return name;
-    }).catchError((error) {
-      // catching any error coming from API
+    try{
+      var response = await DioHelper.getData(url: endpoint_get_profile, token: token_mary);
+      if (response.statusCode == 200) {
+        userModel.name = response.data['name'];
+        userModel.id = response.data['id'];// Set NULL
+        userModel.email = response.data['email']; // set NULL
+        await CacheHelper.putString(key: SharedKeys.name,value: userModel.name.toString(),);
+        //await CacheHelper.putInt(key: SharedKeys.userID,value:userModel.id!);
+        await CacheHelper.putString(key: SharedKeys.userID,value:userModel.id.toString(),);
+        await CacheHelper.putString(key: SharedKeys.email,value:userModel.email.toString(),);
+       // userID_const =CacheHelper.getInt(key: SharedKeys.userID);
+        userID_const = CacheHelper.getString(key: SharedKeys.userID);
+        userName_const =  CacheHelper.getString(key: SharedKeys.name);
+        userEmail_const = CacheHelper.getString(key: SharedKeys.email);
+
+        print ('Sucess Getting User profile 200');
+        print ('userName_const of user is $userName_const');
+        print ('userID_const of user is $userID_const');
+        print ('userEmail_const of user is $userEmail_const');
+        emit(SucessGetUserInfoState());
+        return ('Sucess');
+      }
+      else{
+        print("Failed Getting User profile ");
+        print(response.statusMessage);
+        emit(ErrorGetUserInfoState());
+        return ('error');
+      }
+    }
+    catch(error){
       print(error);
-      emit(GetNameEmailerrorState());
-    });
+      emit(ErrorGetUserInfoState());
+      return ('error');
+    }
   }
 
 }
