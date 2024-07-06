@@ -20,10 +20,6 @@ class AppTheme {
   static const Color profile_baby_blue_darker = Color (0xFFadc8ff);
   static const Color green_light = Color (0xFFb2ed82);
 
-
-
-
-
   static const Color notWhite = Color(0xFFEDF0F2);
   static const Color nearlyWhite = Color(0xFFC8CAF5);
   static const Color nearlyWhite2 = Color(0xFFE5E5F1);
