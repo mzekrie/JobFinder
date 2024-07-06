@@ -87,7 +87,6 @@ class LoginCubit extends Cubit<LoginState> {
       return ('error');
     }
   }
-
   updateName({String? name}) async {
     emit(UpdateNamePasswordDataState());
     try {
