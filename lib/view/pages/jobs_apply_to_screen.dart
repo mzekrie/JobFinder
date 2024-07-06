@@ -513,17 +513,12 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
 
                 if (validate != ('Error')) {
 
-
                   showAppliedMessage = true;  // to display message container at the home page
                   emailController.clear();
                   nameController.clear();
                   handPhoneController.clear();
                   _workType = "Senior UX Designer";
 
-                  // Navigator.of(context)
-                  //     .pushNamedAndRemoveUntil(
-                  //     AppRoute.homeScreen,
-                  //         (route) => false);
                   buildCompleted();
 
                   Fluttertoast.showToast(

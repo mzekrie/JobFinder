@@ -5,7 +5,6 @@ import '../../model/shared/colors_theme.dart';
 import '../../model/shared/constant_attribute.dart';
 import '../../router/router.dart';
 import '../builder_item/all_job_item.dart';
-import '../widget/default_button.dart';
 import '../widget/default_text_field.dart';
 import 'jobs_all_screen.dart';
 
