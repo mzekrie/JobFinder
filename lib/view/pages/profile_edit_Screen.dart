@@ -240,9 +240,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                           {
                             Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
                           }
-
                       });
-
                     },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
