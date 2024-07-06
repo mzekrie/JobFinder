@@ -30,6 +30,8 @@ var formKeyApplyJob2 = GlobalKey<FormState>();
 List<Map> allJobs = [] ;
 List<Map> favJobs = [] ;
 XFile? userImage;
+XFile? userCV;
+XFile? userCVImage;
 bool showAppliedMessage = false;
 bool showAcceptedMessage = false;
 
@@ -77,8 +79,8 @@ TextEditingController otp6Controller = TextEditingController();
 ////////////// token /////////////////
 //var token_mary = "11436|nrfeMpeoKQQzx5uLHC2cMSwm5e9MsazPpSiGnWpF"; // koko1
 //var token_mary ="11401|pENJ0cHlzInPRJsUw0ZmR97a2LaqEWujgy3ZfwfE";
-var token_mary ="not updated";
 //var token_ali = "2689|uERlFfnpNd7kwK9x2IvpN6Cf9HDU7QK6weBjeY8i";
+var token_mary ="not updated";
 
 ///////////user profile ////////////
 late String userID_const ='1857';

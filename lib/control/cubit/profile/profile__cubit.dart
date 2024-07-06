@@ -92,6 +92,40 @@ class ProfileCubit extends Cubit<ProfileState> {
 
 /// add portfolio CV and image
   /// i have to path to it the uploaded file and name of the file
+
+
+  addPortfolio ({required XFile? userCV, required XFile? userCVImage}) async{
+
+   try{
+     emit(AddingPortfolioDataState());
+
+     var response = await DioHelper.postData(url: endpoint_add_portofolio,token: token_mary,
+         data: {
+           // "cv_file" : File(userCV!.path),
+           // "image": File(userCVImage!.path),
+           "cv_file" : XFile(userCV!.path),
+           "image": XFile(userCVImage!.path),
+         });
+
+     if (response.statusCode == 200) {
+       print(" Add Portfolio successfully, Status code is  ${response.statusMessage} ");
+       emit(SuccessAddingPortfolioDataState());
+       return ('Success');
+     }
+     else{
+       print(" Error Add Portfolio, Status code is  ${response.statusMessage} ");
+       return ('Error');
+     }
+           }
+   catch(error){
+     print(error.toString());
+     emit(ErrorAddingPortfolioDataState());
+     return ('Error');
+   }
+
+  }
+
+  ///old add portfolio using pdf but didnot work
   uploadImageAndCVFile({File? pickedFile, String? fileName}) async {
 
     try{emit(AddingPortfolioDataState());
@@ -128,7 +162,8 @@ class ProfileCubit extends Cubit<ProfileState> {
     }
 
   }
-/// Edit Profile fn
+
+  /// Edit Profile fn
   Future editProfile(
       {
       String? email,
