@@ -4,7 +4,7 @@ class AppTheme {
 
   static const Color blueButtonGP = Color(0xFF3366FF);
   static const Color grayGP = Color(0xFF6B7280);
-  static const Color grayLightGP = Color(0xFFFAFAFA);
+  static const Color grayLightGP = Color(0xFFA0A1A2);
   static const Color blackGP = Color(0xFF111827);
   static const Color whiteGP = Color(0xFFFFFFFF);
   static const Color blueDarkGP = Color(0xFF091A7A);
@@ -17,6 +17,12 @@ class AppTheme {
   static const Color secondColor = Color(0xFFffffff); // scaffold background
 // profile
   static const Color profile_baby_blue = Color (0xFFd6e4ff);
+  static const Color profile_baby_blue_darker = Color (0xFFadc8ff);
+  static const Color green_light = Color (0xFFb2ed82);
+
+
+
+
 
   static const Color notWhite = Color(0xFFEDF0F2);
   static const Color nearlyWhite = Color(0xFFC8CAF5);

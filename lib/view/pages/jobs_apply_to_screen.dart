@@ -474,7 +474,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
         backgroundColor: AppTheme.chat_bg_white,
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).popAndPushNamed(AppRoute.allJobsScreen);
+              Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.allJobsScreen, (route) => false);
             },
             icon: Image.asset(
               "assets/images/arrow-left.png",
@@ -520,10 +520,11 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                   handPhoneController.clear();
                   _workType = "Senior UX Designer";
 
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil(
-                      AppRoute.homeScreen,
-                          (route) => false);
+                  // Navigator.of(context)
+                  //     .pushNamedAndRemoveUntil(
+                  //     AppRoute.homeScreen,
+                  //         (route) => false);
+                  buildCompleted();
 
                   Fluttertoast.showToast(
                     msg: " Successfully applied to Job!",
@@ -537,11 +538,11 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                 }
                 else {
                   showAppliedMessage = true;  // to display message container at the home page
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil(
-                      AppRoute.homeScreen,
-                          (route) => false);
-
+                  // Navigator.of(context)
+                  //     .pushNamedAndRemoveUntil(
+                  //     AppRoute.homeScreen,
+                  //         (route) => false);
+                  buildCompleted();
                   Fluttertoast.showToast(
                     msg: " Error  applied to Job!",
                     toastLength: Toast.LENGTH_SHORT,
@@ -638,13 +639,13 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
           const SizedBox(height: 30,),
 
           defaultButton(
-              text:  "Go To Applied Jobs ",
+              text:  "Go To Home ",
               radius: 25,
               backGround: AppTheme.blueButtonGP,
               function:(){
                 Navigator.of(context)
                     .pushNamedAndRemoveUntil(
-                    AppRoute.appliedJobsScreen,
+                    AppRoute.jobsScreen,
                         (route) => false);
               } ),
 

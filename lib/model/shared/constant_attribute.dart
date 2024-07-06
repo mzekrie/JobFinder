@@ -30,6 +30,7 @@ List<Map> allJobs = [] ;
 List<Map> favJobs = [] ;
 
 bool showAppliedMessage = false;
+bool showAcceptedMessage = false;
 
 /// user Auth
 //TextEditingController emailController = TextEditingController(text: CacheHelper.getString(key: SharedKeys.email));

@@ -62,7 +62,7 @@ class _BuilderAllJobsState extends State<BuilderAllJobs> {
                     ),
                     SizedBox(width: 0.1 * width),
                     Visibility(
-                        visible: ("${widget.item.favorites}" == '0'),
+                        visible: ("${widget.item.favorites}" == '1648'),
                         child: IconButton(onPressed: (){},icon:Image.asset("assets/images/saved_inactive.png") ),
                         replacement:IconButton(onPressed: (){},icon:Image.asset("assets/images/archive-minus.png") ),
                     ),
