@@ -134,16 +134,16 @@ class LoginCubit extends Cubit<LoginState> {
         await CacheHelper.putString(key: SharedKeys.name,value: userModel.name.toString(),);
         //await CacheHelper.putInt(key: SharedKeys.userID,value:userModel.id!);
         await CacheHelper.putString(key: SharedKeys.userID,value:userModel.id.toString(),);
-        await CacheHelper.putString(key: SharedKeys.email,value:userModel.email.toString(),);
+        //await CacheHelper.putString(key: SharedKeys.email,value:userModel.email.toString(),);
        // userID_const =CacheHelper.getInt(key: SharedKeys.userID);
         userID_const = CacheHelper.getString(key: SharedKeys.userID);
         userName_const =  CacheHelper.getString(key: SharedKeys.name);
-        userEmail_const = CacheHelper.getString(key: SharedKeys.email);
+        //userEmail_const = CacheHelper.getString(key: SharedKeys.email);
 
         print ('Sucess Getting User profile 200');
         print ('userName_const of user is $userName_const');
         print ('userID_const of user is $userID_const');
-        print ('userEmail_const of user is $userEmail_const');
+        //print ('userEmail_const of user is $userEmail_const');
         emit(SucessGetUserInfoState());
         return ('Sucess');
       }
