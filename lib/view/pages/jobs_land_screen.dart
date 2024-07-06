@@ -20,7 +20,6 @@ class _JobsScreenState extends State<JobsScreen> {
   @override
   void initState() {
     // TODO: implement initState
-
     super.initState();
   }
 
