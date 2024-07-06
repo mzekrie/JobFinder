@@ -240,7 +240,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                           {
                             Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
                           }
-                        else{}
+
                       });
 
                     },
@@ -275,9 +275,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                         {
                           Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.profileEditScreen, (route) => false);
                         }
-                        else{
 
-                        }
                       });
                       },
                     child: const Row(
