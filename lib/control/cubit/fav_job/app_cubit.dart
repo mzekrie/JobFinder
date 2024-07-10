@@ -58,7 +58,7 @@ class AppCubit extends Cubit<AppState> {
       version: 1 ,
       onCreate: (database , version){ // run one time only
         print('database Created');
-        database.execute("CREATE TABLE tasks(id INTEGER PRIMARY KEY , title TEXT , companyName TEXT , jobTimeType TEXT ,jobType TEXT ,  salary TEXT, location Text ,favorites TEXT)").then( // for creating table
+        database.execute("CREATE TABLE jobTable(id INTEGER PRIMARY KEY , title TEXT , companyName TEXT , jobTimeType TEXT ,jobType TEXT ,  salary TEXT, location Text ,favorites TEXT)").then( // for creating table
                 (value){
               print('table created');
             }
