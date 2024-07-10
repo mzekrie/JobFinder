@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../../model/shared/constant_attribute.dart';
+import '../../../view/pages/jobs_all_2_screen.dart';
+import '../../../view/pages/jobs_fav_2_screen.dart';
 
 part 'app_state.dart';
 
@@ -17,8 +19,8 @@ class AppCubit extends Cubit<AppState> {
    List<Map> favJobs = [] ;
 
   List<Widget> screens = [
-    allJobsScreen(), // 0
-    favJobsScreen(), // 1
+    JobsAll2Screen(), // 0
+    JobsFav2Screen(), // 1
       ];
   List<String> titles = [
     'All Jobs', // 0
@@ -83,7 +85,7 @@ class AppCubit extends Cubit<AppState> {
     required String jobType ,
     required String salary,
     required String location ,
-    required String favorites
+    required String favorites,
   }) async {
     await database.transaction( // edit
             (txn){
