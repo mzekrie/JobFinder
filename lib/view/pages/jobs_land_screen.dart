@@ -504,7 +504,12 @@ class _JobsScreenState extends State<JobsScreen> {
                       backgroundColor: AppTheme.blueButtonGP,
                       shadowColor: Colors.lightBlue,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil(
+                          AppRoute.applyToJobScreen,
+                              (route) => false);
+                    },
                     child: const DefaultText(
                       text: (" Apply now "),
                       color: AppTheme.whiteGP,

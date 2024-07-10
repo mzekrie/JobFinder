@@ -509,7 +509,13 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
 
                 String? validate =await AppliedJobCubit.get(context).applyToJob(
                       name: nameController.text,
-                      email:emailController.text, mobile: "${myCountry.dialCode}${handPhoneController.text}", workType:_workType, cvFile:fileToDisplay_cv, cvFileName: _fileName_cv, otherFile:fileToDisplay_other, otherFileName:_fileName_other);
+                      email:emailController.text,
+                    mobile: "${myCountry.dialCode}${handPhoneController.text}",
+                    workType:_workType,
+                    cvFile:fileToDisplay_cv,
+                    cvFileName: _fileName_cv,
+                    otherFile:fileToDisplay_other,
+                    otherFileName:_fileName_other);
 
                 if (validate != ('Error')) {
 
