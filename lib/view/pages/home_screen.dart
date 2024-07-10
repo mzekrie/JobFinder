@@ -20,7 +20,6 @@ class HomeScreen extends StatelessWidget {
      const SavedJobsScreen(),
      const ProfileScreen()
   ];
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AllJobsCubit, AllJobsState>(
