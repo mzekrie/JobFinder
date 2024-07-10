@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../control/cubit/fav_job/app_cubit.dart';
 import '../builder_item/all_job_2_item.dart';
-
 
 class JobsAll2Screen extends StatelessWidget {
 
