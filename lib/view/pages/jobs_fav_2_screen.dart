@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../control/cubit/fav_job/app_cubit.dart';
 import '../builder_item/all_job_2_item.dart';
 
+
 class JobsFav2Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
