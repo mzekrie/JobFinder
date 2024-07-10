@@ -1,7 +1,5 @@
-import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import '../../control/cubit/fav_job/app_cubit.dart';
 import '../../model/shared/colors_theme.dart';
