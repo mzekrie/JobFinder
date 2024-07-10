@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (context) => FavJobsCubit()..getFavJobs(),),
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => ProfileCubit()..getProfileDataAll() ..getPortfolioDataAll(),),
-        BlocProvider(create: (context) => AppCubit()..createDatabase() ..insertToDatabase(title: "UX Designer", companyName: "Twitter", jobTimeType: "Fulltime", jobType: "Remotely", salary: "1500 USD", location: "KSA", favorites: "1")),
+        //BlocProvider(create: (context) => AppCubit()..createDatabase()),
 
       ],
 

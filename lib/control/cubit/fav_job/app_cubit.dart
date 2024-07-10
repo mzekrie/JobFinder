@@ -13,7 +13,7 @@ class AppCubit extends Cubit<AppState> {
   static AppCubit get(context) => BlocProvider.of(context); // ده الحيخلي الفروع للكيوبت تعرفك الحالة الحالية
   int currentIndex  = 0 ; // starting point
   bool isBottomSheet = false ;
-  IconData fabIcon = Icons.edit ;
+  IconData fabIcon = Icons.add ;
   late Database database ;
    List<Map> allJobs = [] ;
    List<Map> favJobs = [] ;
@@ -89,7 +89,7 @@ class AppCubit extends Cubit<AppState> {
   }) async {
     await database.transaction( // edit
             (txn){
-          return txn.rawInsert("INSERT INTO jobTable (title, companyName, jobTimeType,jobType,  salary, location,favorites) VALUES('Designer UX','Microsoft','Full Time','Freelance','1800 USD','Maadi Cairo' ,'1') ")// for adding data
+          return txn.rawInsert("INSERT INTO jobTable (title, companyName, jobTimeType,jobType,  salary, location,favorites) VALUES('$title', '$companyName', '$jobTimeType','$jobType','$salary','$location','$favorites') ")// for adding data
               .then( (value){
             print("$value inserted Successfully");
             emit(AppInsertDatabaseState());
