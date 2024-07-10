@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (context) => FavJobsCubit()..getFavJobs(),),
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => ProfileCubit()..getProfileDataAll() ..getPortfolioDataAll(),),
-        //BlocProvider(create: (context) => AppCubit()..createDatabase()),
+        BlocProvider(create: (context) => AppCubit()..createDatabase()),
 
       ],
 
@@ -60,8 +60,8 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         onGenerateRoute: onGenerateRouter,
-       // initialRoute: AppRoute.portfolioScreen,
-          initialRoute: AppRoute.splashScreen,
+        initialRoute: AppRoute.jobsFavLayout,
+         // initialRoute: AppRoute.splashScreen,
 
 
       ),

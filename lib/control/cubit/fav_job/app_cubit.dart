@@ -89,7 +89,7 @@ class AppCubit extends Cubit<AppState> {
   }) async {
     await database.transaction( // edit
             (txn){
-          return txn.rawInsert("INSERT INTO jobTable (title, companyName, jobTimeType,jobType,  salary, location,favorites) VALUES('$title', '$companyName', '$jobTimeType','$jobType','$salary','$location','$favorites') ")// for adding data
+          return txn.rawInsert("INSERT INTO jobTable(title, companyName, jobTimeType,jobType,  salary, location,favorites)VALUES('$title', '$companyName', '$jobTimeType','$jobType','$salary','$location','$favorites') ")// for adding data
               .then( (value){
             print("$value inserted Successfully");
             emit(AppInsertDatabaseState());
@@ -104,6 +104,11 @@ class AppCubit extends Cubit<AppState> {
   } // insert
 
   void getDataFromDatabase(database) {
+
+
+    allJobs = [] ;
+    favJobs = [] ; // to clear the list upon exiting and loading
+
     emit(AppCreateDatabaseLoadingState());
     database.rawQuery('SELECT * FROM jobTable').then((value) {
       value.forEach( (element){ // تروح علي كل عنصر

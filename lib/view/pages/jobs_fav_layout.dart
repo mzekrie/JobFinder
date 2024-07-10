@@ -1,29 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../control/cubit/fav_job/app_cubit.dart';
 import '../../model/shared/colors_theme.dart';
 import '../../router/router.dart';
 import '../widget/default_form_field.dart';
 
-class JobsFavLayout extends StatelessWidget {
+class JobsFavLayout extends StatefulWidget {
+  @override
+  State<JobsFavLayout> createState() => _JobsFavLayoutState();
+}
+
+class _JobsFavLayoutState extends State<JobsFavLayout> {
   var titleJobController = TextEditingController() ;
+
   var compNameController = TextEditingController();
+
   var jobTimeTypeController = TextEditingController() ;
+
   var jobTypeController = TextEditingController();
+
   var salaryController = TextEditingController();
+
   var locationController = TextEditingController();
+
   var favoritesController = TextEditingController(text: '0');
 
-
-
-  GlobalKey<ScaffoldState> scaffoldKey1 = GlobalKey(); // for making screen detects snack bar
+  GlobalKey<ScaffoldState> scaffoldKey1 = GlobalKey();
+ // for making screen detects snack bar
   GlobalKey<FormState> formKey2Jobs = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
 
      var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    //var width = MediaQuery.of(context).size.width;
     return BlocProvider( // السيستم بقا جوا البلوك
       create: (context) => AppCubit()..createDatabase(), // ربطت الكود بل كيوبت و استدعاء الداتا بيس
       child: BlocConsumer<AppCubit,AppState>(
@@ -65,7 +77,7 @@ class JobsFavLayout extends StatelessWidget {
               backgroundColor: AppTheme.blueButtonGP,
               onPressed: () {
                 if(cubit.isBottomSheet){ // true
-                  if(formKey2Jobs.currentState!.validate()){// nested if
+                  if(formKey2Jobs.currentState!.validate()){// if user filled all the data = true
                     AppCubit.get(context).insertToDatabase
                       (title: titleJobController.text,
                         companyName: compNameController.text,
@@ -74,13 +86,36 @@ class JobsFavLayout extends StatelessWidget {
                         salary: salaryController.text,
                         location: locationController.text,
                         favorites: favoritesController.text);
+
+                    titleJobController.clear();
+                    compNameController.clear();
+                    jobTimeTypeController.clear();
+                    jobTypeController.clear();
+                    salaryController.clear();
+                    locationController.clear();
+                    favoritesController.clear();
+
+                    Navigator.pop(context);
+
+                    Fluttertoast.showToast(
+                        msg: "Fav added Successfully",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.green,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
+
+
                   }
+                  else{print('form not validated');}
                 }
                 else{ // false
-                  scaffoldKey1.currentState!.showBottomSheet(
+                  scaffoldKey1.currentState!.showBottomSheet( // if form validation gives error i will keep page
                         (context) => Container(
                       color: Colors.grey[100],
-                      height: double.infinity,
+                      //height: double.infinity,
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: SingleChildScrollView(
@@ -103,7 +138,7 @@ class JobsFavLayout extends StatelessWidget {
                                       }
                                     }),
                                 SizedBox(height: 0.02 * height),
-                          
+
                               DefaultFormField(
                                   radius: 10,
                                   backgroundColor: AppTheme.whiteGP,
@@ -118,7 +153,7 @@ class JobsFavLayout extends StatelessWidget {
                                     }
                                   }),
                               SizedBox(height: 0.02 * height),
-                          
+
                               DefaultFormField(
                                   radius: 10,
                                   backgroundColor: AppTheme.whiteGP,
@@ -133,7 +168,7 @@ class JobsFavLayout extends StatelessWidget {
                                     }
                                   }),
                               SizedBox(height: 0.02 * height),
-                          
+
                               DefaultFormField(
                                   radius: 10,
                                   backgroundColor: AppTheme.whiteGP,
@@ -148,7 +183,7 @@ class JobsFavLayout extends StatelessWidget {
                                     }
                                   }),
                               SizedBox(height: 0.02 * height),
-                          
+
                               DefaultFormField(
                                   radius: 10,
                                   backgroundColor: AppTheme.whiteGP,
@@ -163,8 +198,7 @@ class JobsFavLayout extends StatelessWidget {
                                     }
                                   }),
                               SizedBox(height: 0.02 * height),
-                          
-                          
+
                               DefaultFormField(
                                   radius: 10,
                                   backgroundColor: AppTheme.whiteGP,
@@ -179,7 +213,7 @@ class JobsFavLayout extends StatelessWidget {
                                     }
                                   }),
                               SizedBox(height: 0.02 * height),
-                          
+
                               DefaultFormField(
                                   radius: 10,
                                   backgroundColor: AppTheme.whiteGP,
@@ -194,7 +228,7 @@ class JobsFavLayout extends StatelessWidget {
                                     }
                                   }),
                               SizedBox(height: 0.02 * height),
-                          
+
                               ],
                             ),
                           ),
@@ -204,6 +238,15 @@ class JobsFavLayout extends StatelessWidget {
                   ).closed.then((value){
                     cubit.isBottomSheet = false ;
                     cubit.fabIcon = Icons.add;
+                    // titleJobController.clear();
+                    // compNameController.clear();
+                    // jobTimeTypeController.clear();
+                    // jobTypeController.clear();
+                    // salaryController.clear();
+                    // locationController.clear();
+                    // favoritesController.clear();
+
+
                   });
                   cubit.isBottomSheet = true ;
                   cubit.fabIcon = Icons.save_sharp;
@@ -245,5 +288,4 @@ class JobsFavLayout extends StatelessWidget {
       ),
     );
   }
-
 } // class
