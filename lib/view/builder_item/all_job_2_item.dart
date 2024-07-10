@@ -41,7 +41,7 @@ Widget BuilderAllJobs2 (Map model , context) => Dismissible(
         const SizedBox(width: 20,),
         IconButton(
             onPressed: (){
-              AppCubit.get(context).UpdateData(favorites: ['0'], id: model['id'],);
+              AppCubit.get(context).UpdateData(favorites: ['1'], id: model['id'],);
             },
             icon: const Icon(
               Icons.favorite,
