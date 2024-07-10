@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
 import '../../control/cubit/fav_job/app_cubit.dart';
 import '../../model/shared/colors_theme.dart';
-import '../../model/shared/constant_attribute.dart';
 import '../widget/default_text_field.dart';
 
 Widget BuilderAllJobs2 (Map model , context) =>
@@ -44,24 +42,46 @@ Widget BuilderAllJobs2 (Map model , context) =>
             ),
           ),
           const SizedBox(width: 20,),
-          IconButton(
+          Visibility(
+            visible: (model['favorites'] == '0'),
+            child: IconButton(
+                onPressed: (){
+                  AppCubit.get(context).UpdateData(favorites: ['1'], id: model['id'],);
+                  Fluttertoast.showToast(
+                                  msg: " Successfully added to Fav Jobs!",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.BOTTOM,
+                                  timeInSecForIosWeb: 3,
+                                  backgroundColor: Colors.green,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0
+                              );
+
+                },
+                icon: const Icon(
+                  Icons.favorite,
+                  color: AppTheme.gray,
+            ),
+            ),
+            replacement: IconButton(
               onPressed: (){
-                AppCubit.get(context).UpdateData(favorites: ['1'], id: model['id'],);
+                AppCubit.get(context).UpdateData(favorites: ['0'], id: model['id'],);
                 Fluttertoast.showToast(
-                                msg: " Successfully added to Fav Jobs!",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.BOTTOM,
-                                timeInSecForIosWeb: 3,
-                                backgroundColor: Colors.green,
-                                textColor: Colors.white,
-                                fontSize: 16.0
-                            );
+                    msg: " Successfully removed from Fav Jobs!",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 3,
+                    backgroundColor: Colors.green,
+                    textColor: Colors.white,
+                    fontSize: 16.0
+                );
 
               },
               icon: const Icon(
                 Icons.favorite,
-                color: AppTheme.gray,
-          ),
+                color: AppTheme.blueButtonGP,
+              ),
+            ),
           ),
         ],
       ),

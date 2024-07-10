@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sqflite/sqflite.dart';
-
-import '../../../model/shared/constant_attribute.dart';
 import '../../../view/pages/jobs_all_2_screen.dart';
 import '../../../view/pages/jobs_fav_2_screen.dart';
 
