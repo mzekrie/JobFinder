@@ -177,7 +177,7 @@ class _ApplyToJobScreenState extends State<ApplyToJobScreen> {
                 backgroundColor: AppTheme.whiteGP,
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
-                labelText: "Username",
+                labelText: "ex: email@domain.com",
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "email cannot be empty";

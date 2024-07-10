@@ -128,7 +128,7 @@ class AppCubit extends Cubit<AppState> {
     database.rawUpdate(
       'UPDATE jobTable SET favorites = ? WHERE id = ? ', ['$favorites',id],
     ).then((value){
-      getDataFromDatabase(database); // عشان يجبلك البيانات بعد التحديث
+      getDataFromDatabase(database); // to get the data after changing
       emit(AppUpdateDatabaseState());
     });
   } // update
