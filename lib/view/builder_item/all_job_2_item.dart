@@ -75,7 +75,6 @@ Widget BuilderAllJobs2 (Map model , context) =>
                     textColor: Colors.white,
                     fontSize: 16.0
                 );
-
               },
               icon: const Icon(
                 Icons.favorite,
