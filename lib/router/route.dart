@@ -5,9 +5,11 @@ import 'package:gp_amit60_mary_zekrie/view/pages/notification_screen.dart';
 import '../view/pages/change_password_screen.dart';
 import '../view/pages/help_center.dart';
 import '../view/pages/job_details_screen.dart';
+import '../view/pages/jobs_all_2_screen.dart';
 import '../view/pages/jobs_all_screen.dart';
 import '../view/pages/jobs_applied_screen.dart';
 import '../view/pages/jobs_apply_to_screen.dart';
+import '../view/pages/jobs_fav_2_screen.dart';
 import '../view/pages/jobs_fav_layout.dart';
 import '../view/pages/jobs_fav_screen.dart';
 import '../view/pages/jobs_filtered_result_screen.dart';
@@ -96,7 +98,11 @@ Route? onGenerateRouter(RouteSettings settings){
     case AppRoute.jobsFavLayout :
       return MaterialPageRoute(builder: (_)=>  JobsFavLayout());
 
+    case AppRoute.jobsAll2Screen :
+      return MaterialPageRoute(builder: (_)=>  JobsAll2Screen());
 
+    case AppRoute.jobsFav2Screen :
+      return MaterialPageRoute(builder: (_)=>  JobsFav2Screen());
 
       /// chat messages
     case AppRoute.messageScreen :

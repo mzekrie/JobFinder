@@ -19,7 +19,11 @@ class AppRoute{
   static const String appliedJobsScreen="AppliedJobsScreen";
   static const String applyToJobScreen="ApplyToJobScreen";
   static const String filteredJobsScreen="FilteredJobsScreen";
-  static const String jobsFavLayout="FilteredJobsScreen";
+  static const String jobsFavLayout="JobsFavLayout";
+  static const String jobsAll2Screen="JobsAll2Screen";
+  static const String jobsFav2Screen="JobsFav2Screen";
+
+
 
   static const String messageScreen="MessageScreen";
   static const String messageChatScreen="MessageChatScreen";

@@ -17,7 +17,7 @@ class JobsFavLayout extends StatelessWidget {
 
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey(); // for making screen detects snack bar
-  GlobalKey<FormState> formKey = GlobalKey();
+  GlobalKey<FormState> formKey2Jobs = GlobalKey();
   @override
   Widget build(BuildContext context) {
 
@@ -53,7 +53,7 @@ class JobsFavLayout extends StatelessWidget {
               backgroundColor: Colors.indigoAccent,
               onPressed: () {
                 if(cubit.isBottomSheet){ // true
-                  if(formKey.currentState!.validate()){// nested if
+                  if(formKey2Jobs.currentState!.validate()){// nested if
                     AppCubit.get(context).insertToDatabase
                       (title: titleJobController.text,
                         companyName: compNameController.text,
@@ -71,7 +71,7 @@ class JobsFavLayout extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(20),
                         child: Form(
-                          key: formKey,
+                          key: formKey2Jobs,
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
