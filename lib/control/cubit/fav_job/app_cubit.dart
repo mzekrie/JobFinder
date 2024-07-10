@@ -9,11 +9,29 @@ part 'app_state.dart';
 class AppCubit extends Cubit<AppState> {
   AppCubit() : super(AppInitial());
   static AppCubit get(context) => BlocProvider.of(context); // ده الحيخلي الفروع للكيوبت تعرفك الحالة الحالية
+  int currentIndex  = 0 ; // starting point
+  bool isBottomSheet = false ;
+  IconData fabIcon = Icons.edit ;
   late Database database ;
-  // List<Map> allJobs = [] ;
-  // List<Map> favJobs = [] ;
+   List<Map> allJobs = [] ;
+   List<Map> favJobs = [] ;
 
-  //
+  List<Widget> screens = [
+    allJobsScreen(), // 0
+    favJobsScreen(), // 1
+      ];
+  List<String> titles = [
+    'All Jobs', // 0
+    'Fav Jobs', // 1
+      ];
+
+
+  void changeIndex(int index){
+    currentIndex = index ;
+    emit(AppChangeBottomNavBarState());
+  }
+
+
   // int? id;
   // String? name;
   // String? image;
@@ -58,8 +76,8 @@ class AppCubit extends Cubit<AppState> {
     });
   } // close
 
-  Future insertToDatabase({
-     required String title ,
+  void insertToDatabase({
+    required String title ,
     required String companyName ,
     required String jobTimeType ,
     required String jobType ,
