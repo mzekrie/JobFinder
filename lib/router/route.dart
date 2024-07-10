@@ -8,6 +8,7 @@ import '../view/pages/job_details_screen.dart';
 import '../view/pages/jobs_all_screen.dart';
 import '../view/pages/jobs_applied_screen.dart';
 import '../view/pages/jobs_apply_to_screen.dart';
+import '../view/pages/jobs_fav_layout.dart';
 import '../view/pages/jobs_fav_screen.dart';
 import '../view/pages/jobs_filtered_result_screen.dart';
 import '../view/pages/jobs_land_screen.dart';
@@ -86,12 +87,15 @@ Route? onGenerateRouter(RouteSettings settings){
     case AppRoute.filteredJobsScreen :
       return MaterialPageRoute(builder: (_)=> const FilteredJobsScreen());
 
-
     case AppRoute.appliedJobsScreen :
       return MaterialPageRoute(builder: (_)=> const AppliedJobsScreen());
 
     case AppRoute.applyToJobScreen :
       return MaterialPageRoute(builder: (_)=> const ApplyToJobScreen());
+
+    case AppRoute.jobsFavLayout :
+      return MaterialPageRoute(builder: (_)=>  JobsFavLayout());
+
 
 
       /// chat messages
