@@ -60,8 +60,8 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         onGenerateRoute: onGenerateRouter,
-        initialRoute: AppRoute.jobsFavLayout,
-         // initialRoute: AppRoute.splashScreen,
+        //initialRoute: AppRoute.jobsFavLayout,
+          initialRoute: AppRoute.splashScreen,
 
 
       ),
